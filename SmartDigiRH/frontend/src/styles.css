@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: royalblue;
+    text-align: center;
+    color: white;
+}
+
+
+
+
+body{margin-top:20px;
+    background-color:#eee;
+    }
+    .card {
+       
+        width: 260px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 5px #adaeaf;
+    }
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid #ffffff;
+        border-radius: 1rem;
+    }
+    .avatar-md {
+        height: 5rem;
+        width: 5rem;
+    }
+    .rounded-circle {
+        border-radius: 50%!important;
+    }
+    .img-thumbnail {
+        padding: 0.15rem;
+        background-color: #f1f3f7;
+        border: 1px solid #eff0f2;
+        border-radius: 0.75rem;
+    }
+    .avatar-title {
+        align-items: center;
+        background-color: #3b76e1;
+        color: #fff;
+        display: flex;
+        font-weight: 500;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+    }
+    .bg-soft-primary {
+        background-color: rgba(59,118,225,.25)!important;
+    }
+    a {
+        text-decoration: none!important;
+    }
+    .badge-soft-danger {
+        color: #f56e6e !important;
+        background-color: rgba(245,110,110,.1);
+    }
+    .badge-soft-success {
+        color: #63ad6f !important;
+        background-color: rgba(99,173,111,.1);
+    }
+    .mb-0 {
+        margin-bottom: 0!important;
+    }
+    .badge {
+        display: inline-block;
+        padding: 0.25em 0.6em;
+        font-size: 75%;
+        font-weight: 500;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.75rem;
+    }
+
+    .button {
+        background-color: white;
+        border-color: transparent;
+    }
+
+    .size{
+        height: 30px;
+        width: 30px;
+    }

@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+
+
+<!-- <table class="table table-striped">
+
+    <thead>
+        <tr>
+
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Email </th>
+            <th>Type</th>
+            <th>Action</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let user of users">
+            <td> {{user.nom}}</td>
+            <td> {{user.prenom}}</td>
+            <td> {{user.username}}</td>
+            <td> {{user.email}}</td>
+            <td> {{user.label}}</td>
+            <td>
+                <td><button (click)="userDetails(user.id)" class="btn btn-info">Details</button>
+                <button (click)="updateUser(user.id)" class="btn btn-success" style="margin-left: 10px">Update</button>
+                <button (click)="deleteUser(user.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+ -->
+
+
+
+
+
+
+
+
+<div class="container"  >
+    <h2>User List</h2>
+
+    <div class="row" >
+        <div class="col-xl-3 col-sm-6" *ngFor = "let user of users">
+            <div class="card">
+                <div class="card-body">
+                
+                    <div class="d-flex align-items-center">
+                        <div><img src="https://pickaface.net/gallery/avatar/ceb123a52820908b1886.png" alt="" class="avatar-md rounded-circle img-thumbnail" /></div>
+                        <div class="flex-1 ms-3">
+                            <h5 class="font-size-16 mb-1">{{user.firstName}} {{user.lastName}} </h5>
+                            <span class="badge badge-soft-success mb-0">{{user.post}}</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 pt-1">
+                        <p class="text-muted mb-0"><i class="mdi mdi-phone font-size-15 align-middle pe-2 text-primary"></i> {{user.phone}}</p>
+                        <p class="text-muted mb-0 mt-2"><i class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i> {{user.email}}</p>
+                        <p class="text-muted mb-0 mt-2"><i class="mdi mdi-google-maps font-size-15 align-middle pe-2 text-primary"></i> {{user.address}}</p>
+                    </div>
+                    <div class="d-flex gap-2 pt-4">
+
+                       
+
+                       
+                        <button (click)="userDetails(user.userId)" type="button" class="btn btn-soft-primary btn-sm w-5" style="margin-right: 40px; background-color: transparent;"><i class="bx bx-user me"></i> Details</button>
+                        <button (click)="updateUser(user.userId)"  class="text-info button w-5"  data-toggle="tooltip" title=""  style="margin-right: 40px; background-color: transparent;" ><i class="fas fa-pencil-alt"></i> </button>
+                        <button (click)="deleteUser(user.userId)" class="text-danger button w-5" data-toggle="tooltip" title="" style="margin-right: 40px; background-color: transparent;"><i class="far fa-trash-alt"></i> </button>
+                        
+                        
+                        <!-- <button type="button" class="btn btn-primary btn-sm w-50"><i class="bx bx-message-square-dots me-1"></i> Contact</button> -->
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+      
+   
+   
+
+    <div class="row g-0 align-items-center pb-4">
+      
+        <div class="col-sm-6">
+            <div class="float-sm-end">
+                <ul class="pagination mb-sm-0">
+                    <li class="page-item disabled">
+                        <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+                    </li>
+                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item">
+                        <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
