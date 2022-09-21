@@ -9,7 +9,7 @@ export class UserService {
   
 //private baseURL = environment.baseURL;
 
-  private baseURL = "http://localhost:8080/user";
+  private baseURL = "http://localhost:8080/user/employee";
   constructor(private httpClient: HttpClient) { }
 
 getUsersList():Observable<UserInterface[]>{

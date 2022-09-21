@@ -66,8 +66,8 @@ public class AccountController {
 		return ("<h1>Welcom to Smart Digital RH<h1>");
 	}
 
-	@PostMapping(path = "/regester")
-//	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping
+	@CrossOrigin(origins = "http://localhost:4200")
 	public String register(@RequestBody User user) {
 		System.out.println(user);
 		service.registerDefaultUser(user);

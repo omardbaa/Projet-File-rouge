@@ -24,7 +24,7 @@ import smartDigiRH.services.impl.TrainingServiceImpl;
 @RestController
 @EnableAutoConfiguration
 @RequestMapping(value = "/training")
-@CrossOrigin(origins = "http://localhost:4200")
+
 public class TrainingController {
 
 

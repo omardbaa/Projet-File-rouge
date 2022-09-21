@@ -24,7 +24,7 @@ import smartDigiRH.services.impl.MeetingServiceImpl;
 @RestController
 @EnableAutoConfiguration
 @RequestMapping(value = "/meeting")
-@CrossOrigin(origins = "http://localhost:4200")
+
 public class MeetingController {
 
 

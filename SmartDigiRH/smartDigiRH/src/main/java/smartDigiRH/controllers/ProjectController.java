@@ -21,10 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
 import smartDigiRH.entities.Project;
 import smartDigiRH.services.impl.ProjectServiceImpl;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @EnableAutoConfiguration
 @RequestMapping(value = "/project")
-@CrossOrigin(origins = "http://localhost:4200")
+
 public class ProjectController {
 
 
@@ -71,6 +72,7 @@ public ResponseEntity<Project> update(@PathVariable Long id, @RequestBody Projec
 	
 //	Get All Projects
 //	@PostAuthorize("hasAuthority('ADMIN')")
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping
 	public ResponseEntity<List<Project>> getAll(){
 		List<Project> projects = service.getAll();

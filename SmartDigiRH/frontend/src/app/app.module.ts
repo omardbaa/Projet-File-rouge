@@ -9,6 +9,22 @@ import { FormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { CreateProjectComponent } from './create-project/create-project.component';
+import { UpdateProjectComponent } from './update-project/update-project.component';
+import { ProjectListComponent } from './project-list/project-list.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { CreateTrainingComponent } from './create-training/create-training.component';
+import { TrainingDetailsComponent } from './training-details/training-details.component';
+import { TrainingListComponent } from './training-list/training-list.component';
+import { UpdateTrainingComponent } from './update-training/update-training.component';
+import { CreateMeetingComponent } from './create-meeting/create-meeting.component';
+import { UpdateMeetingComponent } from './update-meeting/update-meeting.component';
+import { MeetingListComponent } from './meeting-list/meeting-list.component';
+import { MeetingDetailsComponent } from './meeting-details/meeting-details.component';
+import { CreateVacationComponent } from './create-vacation/create-vacation.component';
+import { UpdateVacationComponent } from './update-vacation/update-vacation.component';
+import { VacationDetailsComponent } from './vacation-details/vacation-details.component';
+import { VacationListComponent } from './vacation-list/vacation-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +32,22 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     CreateUserComponent,
     UpdateUserComponent,
     UserDetailsComponent,
+    CreateProjectComponent,
+    UpdateProjectComponent,
+    ProjectListComponent,
+    ProjectDetailsComponent,
+    CreateTrainingComponent,
+    TrainingDetailsComponent,
+    TrainingListComponent,
+    UpdateTrainingComponent,
+    CreateMeetingComponent,
+    UpdateMeetingComponent,
+    MeetingListComponent,
+    MeetingDetailsComponent,
+    CreateVacationComponent,
+    UpdateVacationComponent,
+    VacationDetailsComponent,
+    VacationListComponent,
     
   ],
   imports: [

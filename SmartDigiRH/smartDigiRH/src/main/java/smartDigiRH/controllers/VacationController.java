@@ -24,7 +24,7 @@ import smartDigiRH.services.impl.VacationServiceImpl;
 @RestController
 @EnableAutoConfiguration
 @RequestMapping(value = "/vacation")
-@CrossOrigin(origins = "http://localhost:4200")
+
 public class VacationController {
 
 

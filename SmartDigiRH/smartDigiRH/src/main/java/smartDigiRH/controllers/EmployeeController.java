@@ -33,7 +33,7 @@ import smartDigiRH.services.impl.TrainingServiceImpl;
 @RestController
 @EnableAutoConfiguration
 @RequestMapping(value = "/user/employee")
-@CrossOrigin(origins = "http://localhost:4200")
+
 
 public class EmployeeController {
 	
@@ -56,8 +56,8 @@ public EmployeeController(EmployeeServiceImpl service){
 	
 	
 
-	@PostMapping(path = "/regester")
-//	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping
+	@CrossOrigin(origins = "http://localhost:4200")
 	public String register(@RequestBody Employee employee) {
 		System.out.println(employee);
 		service.registerDefaultEmployee(employee);

@@ -5,14 +5,14 @@
     
     <div class="form-group"> 
         <label>First name  </label>
-        <input type="text"  class="form-control" id ="nom"
-            [(ngModel)] = "user.firstName" name = "nom">
+        <input type="text"  class="form-control" id ="firstName"
+            [(ngModel)] = "user.firstName" name = "firstName">
     </div>
 
     <div class="form-group"> 
         <label>Last Name  </label>
-        <input type="text"  class="form-control" id ="prenom"
-            [(ngModel)] = "user.lastName" name = "prenom">
+        <input type="text"  class="form-control" id ="lastName"
+            [(ngModel)] = "user.lastName" name = "lastName">
     </div>
 
 
@@ -106,36 +106,27 @@
 
     <div class="form-group"> 
         <label>Type  </label>
-        <input type="text"  class="form-control" id ="label"
-            [(ngModel)] = "user.type" name = "label">
+        <input type="text"  class="form-control" id ="type"
+            [(ngModel)] = "user.type" name = "type">
     </div>
-
-    
-<br> 
-<td>
-    
-   
-    <div class="card-body text-center"  style="margin-left: 300px">
+    <br> 
+    <td>
+        
        
-        <!-- Profile picture image-->
-        <img class="img-account-profile rounded-circle mb-2" src="https://pickaface.net/gallery/avatar/ceb123a52820908b1886.png" alt="" class="avatar-md rounded-circle img-thumbnail">
-        <!-- Profile picture help block-->
-        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-        <!-- Profile picture upload button-->
-        <button class="btn btn-primary" type="button" >Upload new image</button>
-
-    </div> 
-    <button class="btn btn-success" type="submit" style="margin-right: 300px">Submit </button>
+        <div class="card-body text-center"  style="margin-left: 300px">
+           
+            <!-- Profile picture image-->
+            <img class="img-account-profile rounded-circle mb-2" src="https://pickaface.net/gallery/avatar/ceb123a52820908b1886.png" alt="" class="avatar-md rounded-circle img-thumbnail">
+            <!-- Profile picture help block-->
+            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+            <!-- Profile picture upload button-->
+            <button class="btn btn-primary" type="button" >Upload new image</button>
     
-
-
-</td>
-
-
-
+        </div> 
+        <button class="btn btn-success" type="submit" style="margin-right: 300px">Submit </button>
+        
+    
+    
+    </td>
+    
 </form>
-
-
-
-
-   
