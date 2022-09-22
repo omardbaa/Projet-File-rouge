@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserInterface } from '../models/user-interface';
+import { User} from '../models/user';
 import { UserService } from '../user-service/user.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UserService } from '../user-service/user.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  users: UserInterface[] = [];
+  users: User[] = [];
 
   constructor(private userService : UserService, private router: Router) { }
 
@@ -25,16 +25,16 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  userDetails(id:number){
-    this.router.navigate(['user-details', id]);
+  userDetails(userId:number){
+    this.router.navigate(['user-details', userId]);
 
   }
 
-  updateUser(id: number){
-    this.router.navigate(['update-user', id]);
+  updateUser(userId: number){
+    this.router.navigate(['update-user', userId]);
   }
-  deleteUser (id: number){
-    this.userService.deleteUser(id).subscribe(data =>{
+  deleteUser (userId: number){
+    this.userService.deleteUser(userId).subscribe(data =>{
    console.log(data);
       this.getUsers();
     })

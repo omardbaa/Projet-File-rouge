@@ -150,4 +150,3 @@ class ConsultTraining{
 	private Long userId;
 	private Long trainingId;
 }
-

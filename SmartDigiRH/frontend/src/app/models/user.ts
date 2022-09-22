@@ -1,5 +1,4 @@
 export class User {
-
     userId!: number;
     firstName!: string;
     lastName!: string;
@@ -17,5 +16,4 @@ export class User {
     post!: string;
     contrat!: string;
     salary!: string;
-
 }

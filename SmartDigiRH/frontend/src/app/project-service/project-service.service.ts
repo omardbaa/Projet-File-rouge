@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProjectInterface } from '../models/project-interface/project-interface';
+import { Project } from '../models/project-interface/project';
 
 @Injectable({
   providedIn: 'root'
@@ -12,20 +12,20 @@ export class ProjectServiceService {
   private baseURL = "http://localhost:8080/project";
   constructor(private httpClient: HttpClient) { }
 
-getProjectList():Observable<ProjectInterface[]>{
+getProjectList():Observable<Project[]>{
 
-  return this.httpClient.get<ProjectInterface[]>(`${this.baseURL}`);
+  return this.httpClient.get<Project[]>(`${this.baseURL}`);
 }
 
-createProject(projct:ProjectInterface): Observable<Object>{
+createProject(projct:Project): Observable<Object>{
   return this.httpClient.post(`${this.baseURL}`, projct);
 }
 
-getProjectById(projectId: number): Observable<ProjectInterface>{
-  return this.httpClient.get<ProjectInterface>(`${this.baseURL}/${projectId}`);
+getProjectById(projectId: number): Observable<Project>{
+  return this.httpClient.get<Project>(`${this.baseURL}/${projectId}`);
 }
 
-updateProject(projectId:number, project: ProjectInterface): Observable<Object>{
+updateProject(projectId:number, project: Project): Observable<Object>{
   return this.httpClient.put(`${this.baseURL}/${projectId}`,project);
 }
 

@@ -1,1 +1,29 @@
-<p>meeting-list works!</p>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Meeting Date</th>
+            <th>Type </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let meeting of meetings">
+            <td>{{meeting.meetingId}}</td>
+            <td> {{meeting.title}}</td>
+            <td> {{meeting.description}}</td>
+            <td> {{meeting.meetingDate}}</td>
+            <td> {{meeting.type}}</td>
+           
+            <td>
+                <td><button (click)="meetingDetails(meeting.meetingId)" class="btn btn-info">Details</button>
+                <button (click)="updateMeeting(meeting.meetingId)" class="btn btn-success" style="margin-left: 10px">Update</button>
+                <button (click)="deleteMeeting(meeting.meetingId)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

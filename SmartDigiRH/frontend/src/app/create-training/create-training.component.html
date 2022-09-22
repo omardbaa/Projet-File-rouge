@@ -1,1 +1,55 @@
-<p>create-training works!</p>
+<div class="col-md-6 offset-md-3" style=" border-color: rgb(65, 65, 245)" style="border: 1px;" >
+    <h3>Ceate Training</h3>
+    <form (ngSubmit) = "onSubmit()">
+        
+        <div class="form-group"> 
+            <label>Title </label>
+            <input type="text"  class="form-control" id ="title"
+                [(ngModel)] = "training.title" name = "title">
+        </div>
+
+        <div class="form-group"> 
+            <label>Description </label>
+            <input type="text"  class="form-control" id ="description"
+                [(ngModel)] = "training.description" name = "description">
+        </div>
+    
+    
+
+        <div class="form-group"> 
+            <label>Start Date  </label>
+            <input type="date"  class="form-control" id ="startDate"
+                [(ngModel)] = "training.startDate" name = "startDate">
+        </div>
+
+
+        <div class="form-group"> 
+            <label>End Date  </label>
+            <input type="date"  class="form-control" id ="endDate"
+                [(ngModel)] = "training.endDate" name = "endDate">
+        </div>
+    
+    
+        <div class="form-group"> 
+            <label>Type  </label>
+            <input type="text"  class="form-control" id ="type"
+                [(ngModel)] = "training.type" name = "type" >
+        </div>
+
+
+
+        <div class="form-group"> 
+            <label>Is Active  </label>
+            <input type="boolean"  class="form-control" id ="active"
+                [(ngModel)] = "training.active" name = "active" >
+        </div>
+    
+    
+       
+          
+            <button class="btn btn-success" type="submit" style="padding-left: 30px" >Submit </button>
+           
+        
+        
+        
+    </form>

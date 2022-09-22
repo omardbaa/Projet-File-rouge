@@ -232,4 +232,3 @@ class MeetingToEmployee{
 	private Long userId;
 	private Long meetingId;
 }
-

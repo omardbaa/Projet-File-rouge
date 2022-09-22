@@ -1,1 +1,56 @@
-<p>update-project works!</p>
+<div class="col-md-6 offset-md-3" style=" border-color: rgb(65, 65, 245)" style="border: 1px;" >
+    <h3>Update Project</h3>
+    <form (ngSubmit) = "onSubmit()">
+        
+        <div class="form-group"> 
+            <label>Title </label>
+            <input type="text"  class="form-control" id ="title"
+                [(ngModel)] = "project.title" name = "title">
+        </div>
+    
+        <div class="form-group"> 
+            <label>Description </label>
+            <input type="text"  class="form-control" id ="description"
+                [(ngModel)] = "project.description" name = "description">
+        </div>
+    
+    
+        <div class="form-group"> 
+            <label>Start Date  </label>
+            <input type="date"  class="form-control" id ="startDate"
+                [(ngModel)] = "project.startDate" name = "startDate">
+        </div>
+
+
+        <div class="form-group"> 
+            <label>End Date  </label>
+            <input type="date"  class="form-control" id ="endDate"
+                [(ngModel)] = "project.endDate" name = "endDate">
+        </div>
+    
+    
+        <div class="form-group"> 
+            <label>Status  </label>
+            <input type="text"  class="form-control" id ="status"
+                [(ngModel)] = "project.status" name = "status" placeholder="On progress">
+        </div>
+    
+        <br> 
+        
+           
+            <div class="card-body text-center"  style="margin-right: 300px; padding: 20px;">
+               
+                <!-- Profile picture image-->
+                <img class="img-account-profile rounded-circle mb-2" src="https://www.picserver.org/assets/library/2020-10-30/originals/new_projects.jpg" alt="" class="avatar-md rounded-circle img-thumbnail">
+                <!-- Profile picture help block-->
+                <div class="small font-italic text-muted mb-4">select project image:JPG or PNG no larger than 5 MB</div>
+                <!-- Profile picture upload button-->
+                <button class="btn btn-primary" type="button" >Upload new image</button>
+        
+            
+            <button class="btn btn-success" type="submit" style="padding-left: 30px" >Submit </button>
+            </div>
+        
+        
+        
+    </form>

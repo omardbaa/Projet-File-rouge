@@ -1,1 +1,39 @@
-<p>create-vacation works!</p>
+<div class="col-md-6 offset-md-3" style=" border-color: rgb(65, 65, 245)" style="border: 1px;" >
+    <h3>Create New Vacation</h3>
+    <form (ngSubmit) = "onSubmit()">
+        
+        <div class="form-group"> 
+            <label>Type </label>
+            <input type="text"  class="form-control" id ="type"
+                [(ngModel)] = "vacation.type" name = "type">
+        </div>
+    
+    
+        <div class="form-group"> 
+            <label>Start Date  </label>
+            <input type="date"  class="form-control" id ="startDate"
+                [(ngModel)] = "vacation.startDate" name = "startDate">
+        </div>
+
+
+        <div class="form-group"> 
+            <label>End Date  </label>
+            <input type="date"  class="form-control" id ="endDate"
+                [(ngModel)] = "vacation.endDate" name = "endDate">
+        </div>
+    
+    
+        <div class="form-group"> 
+            <label>Period  </label>
+            <input type="text"  class="form-control" id ="period"
+                [(ngModel)] = "vacation.period" name = "period" >
+        </div>
+    
+       
+          
+            <button class="btn btn-success" type="submit" style="padding-left: 30px" >Submit </button>
+           
+        
+        
+        
+    </form>

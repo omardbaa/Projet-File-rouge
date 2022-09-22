@@ -90,5 +90,12 @@ public class Employee extends User {
 	private Collection<Vacation> vacations;
 
 
+
+	public void setEmployees(Collection<Employee> employees) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	
 }

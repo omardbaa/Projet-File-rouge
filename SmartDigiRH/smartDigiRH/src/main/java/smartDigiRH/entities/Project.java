@@ -51,7 +51,7 @@ public class Project {
 	@DateTimeFormat (pattern = "yyyy-MM-dd")
 	private Date endDate;
 	
-	@NotEmpty
+	
 	private String status;
 	
 	

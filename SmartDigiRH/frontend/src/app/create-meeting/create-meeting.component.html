@@ -1,1 +1,39 @@
-<p>create-meeting works!</p>
+<div class="col-md-6 offset-md-3" style=" border-color: rgb(65, 65, 245)" style="border: 1px;" >
+    <h3>Create New Meeting</h3>
+    <form (ngSubmit) = "onSubmit()">
+        
+        <div class="form-group"> 
+            <label>Title </label>
+            <input type="text"  class="form-control" id ="title"
+                [(ngModel)] = "meeting.title" name = "title">
+        </div>
+
+        <div class="form-group"> 
+            <label>Description </label>
+            <input type="text"  class="form-control" id ="description"
+                [(ngModel)] = "meeting.description" name = "description">
+        </div>
+    
+    
+
+        <div class="form-group"> 
+            <label>Meeting Date  </label>
+            <input type="date"  class="form-control" id ="meetingDate"
+                [(ngModel)] = "meeting.meetingDate" name = "meetingDate">
+        </div>
+    
+    
+        <div class="form-group"> 
+            <label>Type  </label>
+            <input type="text"  class="form-control" id ="type"
+                [(ngModel)] = "meeting.type" name = "type" >
+        </div>
+    
+       
+          
+            <button class="btn btn-success" type="submit" style="padding-left: 30px" >Submit </button>
+           
+        
+        
+        
+    </form>

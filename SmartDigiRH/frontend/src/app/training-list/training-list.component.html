@@ -1,1 +1,36 @@
-<p>training-list works!</p>
+<h3>Training List</h3>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Type </th>
+            <th>Description</th>
+            <th>Strat Date</th>
+            <th>End Date</th>
+            <th>Is Active</th>
+            
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let training of trainings">
+            <td>{{training.trainingId}}</td>
+            <td>{{training.title}}</td>
+            <td> {{training.type}}</td>
+            <td> {{training.description}}</td>
+            <td> {{training.startDate}}</td>
+            <td> {{training.endDate}}</td>
+            <td> {{training.active}}</td>
+           
+            <td>
+                <td><button (click)="trainingDetails(training.trainingId)" class="btn btn-info">Details</button>
+                <button (click)="updateTraining(training.trainingId)" class="btn btn-success" style="margin-left: 10px">Update</button>
+                <button (click)="deleteTraining(training.trainingId)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

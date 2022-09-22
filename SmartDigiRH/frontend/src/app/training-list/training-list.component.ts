@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Training } from '../models/training-interface/training';
+import { TrainingService } from '../training-service/training.service';
 
 @Component({
   selector: 'app-training-list',
@@ -7,9 +10,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainingListComponent implements OnInit {
 
-  constructor() { }
+  trainings: Training[] = [];
+
+  constructor(private trainingService : TrainingService, private router: Router) { }
 
   ngOnInit(): void {
+
+    this.getTrainings();
+  }
+
+  private getTrainings(){
+    this.trainingService.getTrainingList().subscribe(data =>{
+      this.trainings = data;
+    });
+  }
+
+ trainingDetails(trainingId:number){
+    this.router.navigate(['training-details', trainingId]);
+
+  }
+
+  updateTraining(trainingId: number){
+    this.router.navigate(['update-training', trainingId]);
+  }
+  deleteTraining (trainingId: number){
+    this.trainingService.deleteTraining(trainingId).subscribe(data =>{
+   console.log(data);
+      this.getTrainings();
+    })
+  }
+
+  getData(){
+    /*this.httpclient.get<UserInterface>("http://localhost:8080/auth/users")*/
   }
 
 }
+
