@@ -3,7 +3,19 @@
 
 
 
-.dropdown-menu:hover  .dropdown-menu{
+.dropdown:hover  .dropdown-menu{
     display: block;transition: all 0.5s ease-in-out;
+    
+}
+
+
+.dropdown-toggle::after {
+    display:none;
+
+}
+
+
+.navbar-brand{
+    margin-left: 120px;
 }
 

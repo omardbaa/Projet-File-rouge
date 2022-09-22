@@ -1,6 +1,25 @@
-<table class="table table-striped">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 
-    <thead>
+
+
+
+<h3>Project List</h3>
+
+
+ <form class="d-flex">
+     <input class="form-control me-6" type="search"   placeholder="Search" aria-label="Search">
+     <button class="search"  class="color-btn" type="submit">Search</button>
+   </form>
+
+
+
+
+<table class="table table-striped">
+    <thead class="table-footer bg-primary text-white"  >
+        
+    
         <tr>
             <th>Id</th>
             <th>Title</th>
@@ -13,7 +32,7 @@
 
         </tr>
     </thead>
-    <tbody>
+    <tbody style="text-align: left">
         <tr *ngFor = "let project of projects">
             <td>{{project.projectId}}</td>
             <td> {{project.title}}</td>
@@ -22,9 +41,9 @@
             <td> {{project.endDate}}</td>
             <td> {{project.status}}</td>
             <td>
-                <td><button (click)="projectDetails(project.projectId)" class="btn btn-info">Details</button>
-                <button (click)="updateProject(project.projectId)" class="btn btn-success" style="margin-left: 10px">Update</button>
-                <button (click)="deleteProject(project.projectId)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+                <button (click)="projectDetails(project.projectId)" class="btn btn-info">Details</button>
+                <button (click)="updateProject(project.projectId)"  class="text-success button w-5"  data-toggle="tooltip" title=""  style="margin-left: 20px; background-color: transparent;" ><i class="fas fa-pencil-alt"></i> </button>
+                <button (click)="deleteProject(project.projectId)" class="text-danger button w-5" data-toggle="tooltip" title="" style="margin-left: 5px; background-color: transparent; padding: 10px;"><i class="far fa-trash-alt"></i> </button>
             </td>
         </tr>
     </tbody>

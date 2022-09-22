@@ -3,3 +3,36 @@
     border: 2px; 
     border-color: black;
 }
+
+
+
+.form-control {
+    display: block;
+    width: 30%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+   
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   margin-left: 70%;
+   margin-bottom: 20px;
+}
+
+.color-btn{
+border-color:transparent ;
+    height: 35px;
+    border-radius: .375rem;
+    background-color: rgba(26, 165, 26, 0.881);
+    margin-left: 10px;
+    color: white;
+  
+    
+}
