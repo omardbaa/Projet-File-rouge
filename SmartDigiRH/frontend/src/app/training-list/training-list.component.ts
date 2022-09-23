@@ -10,6 +10,14 @@ import { TrainingService } from '../training-service/training.service';
 })
 export class TrainingListComponent implements OnInit {
 
+pageSize = 0;
+perPage = 4;
+p: number = 1;
+title = '';
+trainingId = '';
+
+
+
   trainings: Training[] = [];
 
   constructor(private trainingService : TrainingService, private router: Router) { }

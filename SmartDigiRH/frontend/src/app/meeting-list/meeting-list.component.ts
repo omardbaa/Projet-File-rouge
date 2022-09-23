@@ -10,6 +10,12 @@ import { Meeting } from '../models/meeting-interface/meeting';
 })
 export class MeetingListComponent implements OnInit {
 
+  pageSize = 0;
+  perPage = 4;
+  p: number = 1;
+  title = '';
+  meetingId = '';
+
 
   meetings: Meeting [] = [];
 

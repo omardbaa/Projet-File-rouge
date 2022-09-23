@@ -10,6 +10,12 @@ import { ProjectServiceService } from "../project-service/project-service.servic
 })
 export class ProjectListComponent implements OnInit {
 
+    pageSize = 0;
+  perPage = 4;
+  p: number = 1;
+  title = '';
+  projectId = '';
+
 projects: Project [] = [];
 
   constructor(private projectservice: ProjectServiceService, private router:Router) { }

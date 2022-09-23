@@ -17,11 +17,12 @@
     border-radius: .375rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
    padding-right: 5rem;
-margin-left: 55%;
+
+   margin-left: 64%;
    margin-bottom: 20px;
 }
 
-.color-btn{
+/* .color-btn{
 border-color:transparent ;
     height: 35px;
     border-radius: .375rem;
@@ -30,4 +31,4 @@ border-color:transparent ;
     color: white;
   
     
-}
+} */

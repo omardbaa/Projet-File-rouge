@@ -5,11 +5,12 @@
 
 
 
-<form class="d-flex" style="margin-top: 50px;">
-    <h4>Training List</h4>
-    <input class="form-control me-6" type="search"   placeholder="Search" aria-label="Search">
-    <button class="search"  class="color-btn" type="submit">Search</button>
-  </form>
+
+<div class="d-flex" style="margin-top: 50px; margin-left: 20px;">
+    <h4 >Training List</h4>
+    <input [(ngModel)]="title" [(ngModel)]="trainingId" class="form-control me-6" type="search"   placeholder="Search" aria-label="Search" >
+  
+    </div>
 
 <table class="table table-striped">
     <thead class="table-footer bg-primary text-white" style="text-align: center" >
@@ -29,7 +30,7 @@
         </tr>
     </thead>
     <tbody style="text-align: center">
-        <tr *ngFor = "let training of trainings">
+        <tr *ngFor = "let training of trainings | filter : title | filter : trainingId | paginate: { itemsPerPage: perPage, currentPage: p }">
             <td>{{training.trainingId}}</td>
             <td>{{training.title}}</td>
             <td> {{training.type}}</td>
@@ -48,3 +49,18 @@
         </tr>
     </tbody>
 </table>
+
+
+
+<pagination-controls class="myPagination" (pageChange)="p = $event"></pagination-controls>
+
+
+   
+
+
+
+
+
+
+
+

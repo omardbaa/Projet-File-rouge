@@ -5,12 +5,11 @@
 
 
 
-<form class="d-flex" style="margin-top: 50px;">
-    <h4>Project List</h4>
-    <input class="form-control me-6" type="search"   placeholder="Search" aria-label="Search">
-    <button class="search"  class="color-btn" type="submit">Search</button>
-  </form>
-
+<div class="d-flex" style="margin-top: 50px; margin-left: 20px;">
+    <h4 >Project List</h4>
+    <input [(ngModel)]="title" [(ngModel)]="projectId" class="form-control me-6" type="search"   placeholder="Search" aria-label="Search" >
+  
+    </div>
 
 
 
@@ -31,7 +30,7 @@
         </tr>
     </thead>
     <tbody style="text-align: left">
-        <tr *ngFor = "let project of projects">
+        <tr *ngFor = "let project of projects | filter : title| filter : projectId | paginate: { itemsPerPage: perPage, currentPage: p }">
             <td>{{project.projectId}}</td>
             <td> {{project.title}}</td>
             <td> {{project.description}}</td>
@@ -46,3 +45,11 @@
         </tr>
     </tbody>
 </table>
+
+
+    <pagination-controls class="myPagination" (pageChange)="p = $event"></pagination-controls> 
+
+
+
+
+

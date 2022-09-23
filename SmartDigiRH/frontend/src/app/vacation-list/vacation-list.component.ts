@@ -10,6 +10,12 @@ import { VacationService } from '../vacation-service/vacation.service';
 })
 export class VacationListComponent implements OnInit {
 
+pageSize = 0;
+perPage = 4;
+p: number = 1;
+type = '';
+vacationId = '';
+
   vacations: Vacation [] = [];
   
     constructor(private vacationService: VacationService, private router:Router) { }

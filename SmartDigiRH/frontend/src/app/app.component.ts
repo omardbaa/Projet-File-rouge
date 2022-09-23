@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SmartDigiRH';
+  logo:string="assets/Images/Logo.png";
 }

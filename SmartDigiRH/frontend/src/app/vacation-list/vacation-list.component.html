@@ -4,11 +4,14 @@
 
 
 
-<form class="d-flex" style="margin-top: 50px;">
-    <h4>Vacation List</h4>
-    <input class="form-control me-6" type="search"   placeholder="Search" aria-label="Search">
-    <button class="search"  class="color-btn" type="submit">Search</button>
-  </form>
+
+<div class="d-flex" style="margin-top: 50px; margin-left: 20px;">
+    <h4 >Vacation List</h4>
+    <input [(ngModel)]="type" [(ngModel)]="vacationId" class="form-control me-6" type="search"   placeholder="Search" aria-label="Search" >
+  
+    </div>
+
+  
 
 <table class="table table-striped">
     <thead class="table-footer bg-primary text-white"  >
@@ -25,7 +28,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let vacation of vacations">
+        <tr *ngFor = "let vacation of vacations | filter : type | filter : vacationId | paginate: { itemsPerPage: perPage, currentPage: p }">
             <td>{{vacation.vacationId}}</td>
             <td> {{vacation.type}}</td>
             <td> {{vacation.period}}</td>
@@ -42,3 +45,8 @@
         </tr>
     </tbody>
 </table>
+
+
+
+   
+    <pagination-controls class="myPagination" (pageChange)="p = $event"></pagination-controls>
