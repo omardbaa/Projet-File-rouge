@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import smartDigiRH.entities.Employee;
 import smartDigiRH.entities.Project;
+import smartDigiRH.services.impl.EmployeeServiceImpl;
 import smartDigiRH.services.impl.ProjectServiceImpl;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -28,38 +30,32 @@ import smartDigiRH.services.impl.ProjectServiceImpl;
 
 public class ProjectController {
 
-
-
-
+	@Autowired
+	EmployeeServiceImpl employeeServiceImpl;
 
 	@Autowired
 	ProjectServiceImpl service;
-	
-	
-	
-	
-	@GetMapping ("/")
-	
-	public String Home () {
+
+	@GetMapping("/")
+
+	public String Home() {
 		return ("<h1>Welcom<h1>");
 	}
-	
-	
-	
+
 //	Create New Project
 //	@PreAuthorize("ADMIN")
 	@PostMapping
-public Project save(@RequestBody Project Project  ) {
+	public Project save(@RequestBody Project Project) {
 		service.save(Project);
 		return Project;
 	}
-	
-	//Update Project
+
+	// Update Project
 	@PutMapping("/{id}")
-public ResponseEntity<Project> update(@PathVariable Long id, @RequestBody Project project  ) {
-		
+	public ResponseEntity<Project> update(@PathVariable Long id, @RequestBody Project project) {
+
 		Project newProject = service.findById(id);
-		
+
 		newProject.setTitle(project.getTitle());
 		newProject.setDescription(project.getDescription());
 		newProject.setStartDate(project.getStartDate());
@@ -68,34 +64,41 @@ public ResponseEntity<Project> update(@PathVariable Long id, @RequestBody Projec
 		service.save(newProject);
 		return new ResponseEntity<>(newProject, HttpStatus.OK);
 	}
-	
-	
+
 //	Get All Projects
 //	@PostAuthorize("hasAuthority('ADMIN')")
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping
-	public ResponseEntity<List<Project>> getAll(){
+	public ResponseEntity<List<Project>> getAll() {
 		List<Project> projects = service.getAll();
 		return new ResponseEntity<>(projects, HttpStatus.OK);
-		
+
 	}
-	
 
+	// getAllEmployeeOfProject
 
-	//Get Project by ID 
 	@GetMapping("/{id}")
-	public ResponseEntity <Project> findById(@PathVariable ("id") Long id) {
-		Project project = service.findById(id);
-		return new ResponseEntity<>(project, HttpStatus.OK);
-		
+	public List<Employee> getAllEmployeeOfProject(@PathVariable("id") Long projectId) {
+
+		return this.employeeServiceImpl.getAllEmployeeOfProject(projectId);
+
 	}
+
+	// Get Project by ID
+//	@GetMapping("/{id}")
+//	public ResponseEntity<Project> findById(@PathVariable("id") Long id) {
+//		Project project = service.findById(id);
+//		return new ResponseEntity<>(project, HttpStatus.OK);
+//
+//	}
+
 //Delet Project
 	@DeleteMapping("/{id}")
-	public ResponseEntity< Map <String, Boolean>> delete(@PathVariable  Long id) {
+	public ResponseEntity<Map<String, Boolean>> delete(@PathVariable Long id) {
 		service.delete(id);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return ResponseEntity.ok(response);
 	}
-	
+
 }

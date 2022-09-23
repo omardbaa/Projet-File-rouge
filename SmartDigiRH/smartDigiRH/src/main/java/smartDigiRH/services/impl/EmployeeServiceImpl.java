@@ -9,15 +9,20 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import smartDigiRH.entities.Employee;
+import smartDigiRH.entities.Project;
 import smartDigiRH.entities.User;
 import smartDigiRH.repositories.AppRoleRepository;
 import smartDigiRH.repositories.EmployeeRepository;
+import smartDigiRH.repositories.ProjectRepository;
 import smartDigiRH.services.AppService;
 
 @Service
 @Transactional
 public class EmployeeServiceImpl implements AppService<Employee> {
 
+	@Autowired
+	ProjectRepository repository;
+	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
@@ -84,6 +89,16 @@ public class EmployeeServiceImpl implements AppService<Employee> {
 
 			throw new RuntimeException("Username invalid");
 		}
+	}
+
+	//getAllEmployeeOfProject
+	public List <Employee> getAllEmployeeOfProject(Long projectId){
+		
+		Project project = this.repository.findByProjectId(projectId);
+		
+		List <Employee> employees = (List <Employee>)project.getEmployees();
+		return employees;
+		
 	}
 
 }

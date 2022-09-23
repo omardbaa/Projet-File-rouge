@@ -38,19 +38,20 @@
 
 
 
+ <input [(ngModel)]="username" [(ngModel)]="userId" class="form-control me-6" type="search"   placeholder="Search" aria-label="Search">
 
 
- <form class="d-flex" style="margin-top: 50px;">
+ <!-- <form class="d-flex" style="margin-top: 50px;">
     <h4>User List</h4>
-    <input class="form-control me-6" type="search"   placeholder="Search" aria-label="Search">
-    <button class="search"  class="color-btn" type="submit">Search</button>
-  </form>
+    <input [(ngModel)]="username" class="form-control me-6" type="search"   placeholder="Search" aria-label="Search">
+    <button  class="search"  class="color-btn" type="submit">Search</button>
+  </form> -->
 
 <div class="container"  >
   
 
     <div class="row" >
-        <div class="col-xl-3 col-sm-6" *ngFor = "let user of users">
+        <div class="col-xl-3 col-sm-6" *ngFor = "let user of users | filter : username | filter : userId | paginate: { itemsPerPage: perPage, currentPage: p }">
             <div class="card">
                 <div class="card-body">
                 
@@ -58,6 +59,7 @@
                         <div><img src="https://pickaface.net/gallery/avatar/ceb123a52820908b1886.png" alt="" class="avatar-md rounded-circle img-thumbnail" /></div>
                         <div class="flex-1 ms-3">
                             <h6 class="font-size-16 mb-1">{{user.firstName}} {{user.lastName}} </h6>
+                            <h6 class="font-size-16 mb-1"><label style="margin-right:10px ;">Id:</label>{{user.userId}}  </h6>
                             <span class="badge badge-soft-success mb-0">{{user.post}}</span>
                         </div>
                     </div>
@@ -89,24 +91,5 @@
    
    
 
-    <div class="row g-0 align-items-center pb-4">
-      
-        <div class="col-sm-6">
-            <div class="float-sm-end">
-                <ul class="pagination mb-sm-0">
-                    <li class="page-item disabled">
-                        <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
-                    </li>
-                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item">
-                        <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+        <pagination-controls class="myPagination" (pageChange)="p = $event"></pagination-controls>
 </div>

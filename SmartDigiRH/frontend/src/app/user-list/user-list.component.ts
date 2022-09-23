@@ -10,6 +10,11 @@ import { UserService } from '../user-service/user.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  pageSize = 0;
+perPage = 4;
+p: number = 1;
+username = '';
+userId = '';
   users: User[] = [];
 
   constructor(private userService : UserService, private router: Router) { }

@@ -25,6 +25,8 @@ import { CreateVacationComponent } from './create-vacation/create-vacation.compo
 import { UpdateVacationComponent } from './update-vacation/update-vacation.component';
 import { VacationDetailsComponent } from './vacation-details/vacation-details.component';
 import { VacationListComponent } from './vacation-list/vacation-list.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +56,9 @@ import { VacationListComponent } from './vacation-list/vacation-list.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
-    FormsModule
+    FormsModule, 
+    NgxPaginationModule, 
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
