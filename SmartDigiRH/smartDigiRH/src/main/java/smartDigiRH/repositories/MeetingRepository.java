@@ -9,6 +9,8 @@ import smartDigiRH.entities.Meeting;
 @Repository
 public interface MeetingRepository extends JpaRepository<Meeting, Long> {
 
+	Meeting findByMeetingId(Long meetingId);
+
 	
 
 

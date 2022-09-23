@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
@@ -24,11 +22,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.Data;
 import smartDigiRH.entities.Employee;
-import smartDigiRH.entities.Meeting;
 import smartDigiRH.entities.Training;
+import smartDigiRH.entities.Vacation;
 import smartDigiRH.services.impl.EmployeeServiceImpl;
-import smartDigiRH.services.impl.MeetingServiceImpl;
 import smartDigiRH.services.impl.TrainingServiceImpl;
+import smartDigiRH.services.impl.VacationServiceImpl;
 
 @RestController
 @EnableAutoConfiguration
@@ -40,7 +38,10 @@ public class EmployeeController {
 	
 	
 	@Autowired 
-	TrainingServiceImpl trainingServiceImpl;
+	private TrainingServiceImpl trainingServiceImpl;
+	
+	@Autowired 
+	private VacationServiceImpl vacationServiceImpl;
 	@Autowired
 	private EmployeeServiceImpl service;
 
@@ -126,7 +127,7 @@ public EmployeeController(EmployeeServiceImpl service){
 	
 	
 	// Consult Training
-	@PostMapping(path = "/consult")
+	@PostMapping(path = "/consultTraining")
 	public Collection<Training> ConsulTraining(@RequestBody ConsultTraining cTraining) {
 
 		Employee employee = (Employee) service.findById(cTraining.getUserId());
@@ -142,6 +143,23 @@ public EmployeeController(EmployeeServiceImpl service){
 
 	
 	
+	
+	// Consult Vacation
+	@PostMapping(path = "/consultVacation")
+	public Collection<Vacation> ConsulTraining(@RequestBody ConsultVacation cVacation) {
+
+		Employee employee = (Employee) service.findById(cVacation.getUserId());
+		Vacation vacation = vacationServiceImpl.findById(cVacation.getVacationId());
+		
+		Collection<Vacation> vacations = employee.getVacations();
+		vacations.add(vacation);
+		employee.setVacations(vacations);
+		service.save(employee);
+
+		return employee.getVacations();
+	}
+	
+	
 
 }
 
@@ -149,4 +167,11 @@ public EmployeeController(EmployeeServiceImpl service){
 class ConsultTraining{
 	private Long userId;
 	private Long trainingId;
+}
+
+
+@Data
+class ConsultVacation{
+	private Long userId;
+	private Long vacationId;
 }

@@ -77,20 +77,20 @@ public class ProjectController {
 
 	// getAllEmployeeOfProject
 
-	@GetMapping("/{id}")
+	@GetMapping("all/{id}")
 	public List<Employee> getAllEmployeeOfProject(@PathVariable("id") Long projectId) {
 
 		return this.employeeServiceImpl.getAllEmployeeOfProject(projectId);
 
 	}
 
-	// Get Project by ID
-//	@GetMapping("/{id}")
-//	public ResponseEntity<Project> findById(@PathVariable("id") Long id) {
-//		Project project = service.findById(id);
-//		return new ResponseEntity<>(project, HttpStatus.OK);
-//
-//	}
+//	 Get Project by ID
+	@GetMapping("/{id}")
+	public ResponseEntity<Project> findById(@PathVariable("id") Long id) {
+		Project project = service.findById(id);
+		return new ResponseEntity<>(project, HttpStatus.OK);
+
+	}
 
 //Delet Project
 	@DeleteMapping("/{id}")

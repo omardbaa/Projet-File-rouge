@@ -9,6 +9,8 @@ import smartDigiRH.entities.Vacation;
 @Repository
 public interface VacationRepository extends JpaRepository<Vacation, Long> {
 
+	Vacation findByVacationId(Long vacationId);
+
 	
 
 	

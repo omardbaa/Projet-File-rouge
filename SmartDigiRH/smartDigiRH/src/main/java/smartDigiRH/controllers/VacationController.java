@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import smartDigiRH.entities.Employee;
 import smartDigiRH.entities.Vacation;
+import smartDigiRH.services.impl.EmployeeServiceImpl;
 import smartDigiRH.services.impl.VacationServiceImpl;
 
 @RestController
@@ -29,10 +31,11 @@ public class VacationController {
 
 
 
-
+@Autowired
+private EmployeeServiceImpl employeeServiceImpl;
 
 	@Autowired
-	VacationServiceImpl service;
+	private VacationServiceImpl service;
 	
 	
 	
@@ -80,6 +83,14 @@ public ResponseEntity<Vacation> update(@PathVariable Long id, @RequestBody Vacat
 	}
 	
 
+	
+	
+	@GetMapping("all/{id}")
+	public List<Employee> getAllEmployeeOfVacation(@PathVariable("id") Long vacationId) {
+
+		return this.employeeServiceImpl.getAllEmployeeOfVacation(vacationId);
+
+	}
 
 	//Get Vacation by ID 
 	@GetMapping("/{id}")

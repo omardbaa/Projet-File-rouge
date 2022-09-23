@@ -9,6 +9,8 @@ import smartDigiRH.entities.Training;
 @Repository
 public interface TrainingRepository extends JpaRepository<Training, Long> {
 
+	Training findByTrainingId(Long trainingId);
+
 	
 
 }

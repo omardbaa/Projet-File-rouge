@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import smartDigiRH.entities.Employee;
 import smartDigiRH.entities.Training;
+import smartDigiRH.services.impl.EmployeeServiceImpl;
 import smartDigiRH.services.impl.TrainingServiceImpl;
 
 @RestController
@@ -28,11 +29,12 @@ import smartDigiRH.services.impl.TrainingServiceImpl;
 public class TrainingController {
 
 
-
+	@Autowired
+	private EmployeeServiceImpl employeeServiceImpl;
 
 
 	@Autowired
-	TrainingServiceImpl service;
+	private TrainingServiceImpl service;
 	
 	
 	
@@ -79,6 +81,14 @@ public ResponseEntity<Training> update(@PathVariable Long id, @RequestBody Train
 		
 	}
 	
+	
+	
+	@GetMapping("all/{id}")
+	public List<Employee> getAllEmployeeOfTraining(@PathVariable("id") Long trainingId) {
+
+		return this.employeeServiceImpl.getAllEmployeeOfTraining(trainingId);
+
+	}
 
 
 	//Get Training by ID 

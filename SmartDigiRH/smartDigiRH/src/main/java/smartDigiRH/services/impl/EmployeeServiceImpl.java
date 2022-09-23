@@ -9,11 +9,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import smartDigiRH.entities.Employee;
+import smartDigiRH.entities.Meeting;
 import smartDigiRH.entities.Project;
+import smartDigiRH.entities.Training;
 import smartDigiRH.entities.User;
+import smartDigiRH.entities.Vacation;
 import smartDigiRH.repositories.AppRoleRepository;
 import smartDigiRH.repositories.EmployeeRepository;
+import smartDigiRH.repositories.MeetingRepository;
 import smartDigiRH.repositories.ProjectRepository;
+import smartDigiRH.repositories.TrainingRepository;
+import smartDigiRH.repositories.VacationRepository;
 import smartDigiRH.services.AppService;
 
 @Service
@@ -21,7 +27,15 @@ import smartDigiRH.services.AppService;
 public class EmployeeServiceImpl implements AppService<Employee> {
 
 	@Autowired
-	ProjectRepository repository;
+	private ProjectRepository repository;
+	@Autowired
+	private VacationRepository vacationRepository;
+	
+	@Autowired
+	private TrainingRepository trainingRepository;
+	
+	@Autowired
+	private MeetingRepository meetingRepository;
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -100,5 +114,42 @@ public class EmployeeServiceImpl implements AppService<Employee> {
 		return employees;
 		
 	}
+	
+	
+	
+	//getAllEmployeeOfVacation
+	public List <Employee> getAllEmployeeOfVacation(Long vacationId){
+		
+		Vacation vacation = this.vacationRepository.findByVacationId(vacationId);
+		
+		List <Employee> employees = (List <Employee>)vacation.getEmployees();
+		return employees;
+		
+	}
+	
+	
+	
+	//getAllEmployeeOfTraining
+	public List <Employee> getAllEmployeeOfTraining(Long trainingId){
+		
+		Training training = this.trainingRepository.findByTrainingId(trainingId);
+		
+		List <Employee> employees = (List <Employee>)training.getEmployees();
+		return employees;
+		
+	}
+	
+	
+	
+	//getAllEmployeeOfMeeting
+	public List <Employee> getAllEmployeeOfMeeting(Long meetingId){
+		
+		Meeting meeting = this.meetingRepository.findByMeetingId(meetingId);
+		
+		List <Employee> employees = (List <Employee>)meeting.getEmployees();
+		return employees;
+		
+	}
+
 
 }
