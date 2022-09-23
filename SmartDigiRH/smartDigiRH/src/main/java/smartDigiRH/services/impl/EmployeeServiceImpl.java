@@ -16,49 +16,43 @@ import smartDigiRH.services.AppService;
 
 @Service
 @Transactional
-public class EmployeeServiceImpl implements AppService <Employee> {
-	
-  
+public class EmployeeServiceImpl implements AppService<Employee> {
+
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-    @Autowired 
-    private AppRoleRepository roleRepo;
-  
-	
+	@Autowired
+	private AppRoleRepository roleRepo;
+
 	@Autowired
 	private EmployeeRepository EmployeeRepository;
-	
+
 	@Override
 	public void save(Employee Employee) {
 		String password = Employee.getPassword();
 		Employee.setPassword(passwordEncoder.encode(password));
-		EmployeeRepository.save(Employee);		
-	}
-	
-	@Override
-	public void update(Employee Employee) {
-		EmployeeRepository.save(Employee);		
+		EmployeeRepository.save(Employee);
 	}
 
+	@Override
+	public void update(Employee Employee) {
+		EmployeeRepository.save(Employee);
+	}
 
 	@Override
 	public void delete(Long id) {
-		EmployeeRepository.deleteById(id);	
+		EmployeeRepository.deleteById(id);
 	}
- 
+
 	@Override
 	public Employee findById(Long id) {
 		return EmployeeRepository.findById(id).get();
 	}
-	
-	
 
 	@Override
 	public List<Employee> getAll() {
-		return (List<Employee>)EmployeeRepository.findAll();
+		return (List<Employee>) EmployeeRepository.findAll();
 	}
-	
 
 	public User loadEmployeeByUserName(String username) {
 		return EmployeeRepository.findByUsername(username);
@@ -68,18 +62,28 @@ public class EmployeeServiceImpl implements AppService <Employee> {
 	public User loadUserByUserName(String username) {
 		return EmployeeRepository.findByUsername(username);
 	}
-
-	
-public Employee registerDefaultEmployee(Employee Employee) {
-	String password = Employee.getPassword();
-	Employee.setPassword(passwordEncoder.encode(password));
-    	
-        Employee.setAppRoles(Arrays.asList(roleRepo.findByRoleName("EMPLOYEE")));
-        return EmployeeRepository.save(Employee);
-    }
-
-
 	
 	
+	
+	
+	
+	
+
+	public Employee registerDefaultEmployee(Employee Employee) {
+
+		String username = Employee.getUsername();
+		User user = EmployeeRepository.findByUsername(username);
+		if (user == null) {
+
+			String password = Employee.getPassword();
+			Employee.setPassword(passwordEncoder.encode(password));
+
+			Employee.setAppRoles(Arrays.asList(roleRepo.findByRoleName("EMPLOYEE")));
+			return EmployeeRepository.save(Employee);
+		} else {
+
+			throw new RuntimeException("Username invalid");
+		}
+	}
 
 }

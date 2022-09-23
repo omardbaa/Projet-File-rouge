@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import smartDigiRH.entities.AppRole;
+import smartDigiRH.entities.Employee;
 import smartDigiRH.entities.User;
 import smartDigiRH.repositories.AppRoleRepository;
 import smartDigiRH.repositories.EmployeeRepository;
@@ -105,6 +106,7 @@ public class AccountServiceImpl<ProjectEmployee> implements AppService<User> {
 		user.setAppRoles(Arrays.asList(roleRepo.findByRoleName("EMPLOYEE")));
 		return userRepository.save(user);
 	}
+
 
 	
 

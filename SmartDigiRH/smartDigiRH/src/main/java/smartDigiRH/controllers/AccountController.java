@@ -36,6 +36,7 @@ import smartDigiRH.entities.AppRole;
 import smartDigiRH.entities.Employee;
 import smartDigiRH.entities.Meeting;
 import smartDigiRH.entities.Project;
+import smartDigiRH.entities.Training;
 import smartDigiRH.entities.User;
 import smartDigiRH.security.JWTUtil;
 import smartDigiRH.services.impl.AccountServiceImpl;
@@ -158,6 +159,28 @@ public class AccountController {
 	}
 	
 	
+	
+	
+	// Assing Project To Employee
+	@PostMapping(path = "/projectEmployee")
+	public Collection<Project> AssignProject(@RequestBody ProjectEmployee projectEmployee) {
+
+		Employee employee = (Employee) service.loadUserByUserName(projectEmployee.getUsername());
+		Project project = projectService.findByTitle(projectEmployee.getTitle());
+		
+		Collection<Project> projects = employee.getProjects();
+		projects.add(project);
+		employee.setProjects(projects);
+		service.save(employee);
+
+		return employee.getProjects();
+	}
+	
+	
+	
+	
+	
+	
 	// Assing Meeting To Employee
 		@PostMapping(path = "/meetingToEmployee")
 		public Collection<Meeting> AssingMeetingToEmployee(@RequestBody MeetingToEmployee meetingEmployee) {
@@ -231,4 +254,13 @@ class ProjectToEmployee {
 class MeetingToEmployee{
 	private Long userId;
 	private Long meetingId;
+}
+
+
+
+
+@Data
+class ProjectEmployee{
+	private String username;
+	private String title;
 }

@@ -52,6 +52,8 @@ repository.deleteById(id);
 		return null;
 	}
 
-
-
+	public Project findByTitle(String title) {
+		return repository.findByTitle(title);
+}
+	
 }

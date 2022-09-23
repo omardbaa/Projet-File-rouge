@@ -125,9 +125,9 @@ public EmployeeController(EmployeeServiceImpl service){
 	
 	
 	
-	// Assing Meeting To Employee
+	// Consult Training
 	@PostMapping(path = "/consult")
-	public Collection<Training> AssingMeetingToEmployee(@RequestBody ConsultTraining cTraining) {
+	public Collection<Training> ConsulTraining(@RequestBody ConsultTraining cTraining) {
 
 		Employee employee = (Employee) service.findById(cTraining.getUserId());
 		Training training = trainingServiceImpl.findById(cTraining.getTrainingId());

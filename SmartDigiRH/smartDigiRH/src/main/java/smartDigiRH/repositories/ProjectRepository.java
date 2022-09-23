@@ -13,7 +13,9 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
 	
 	Project findByProjectId(Long projectId);
 
-	void save(Employee employee); 
+	void save(Employee employee);
+
+	Project findByTitle(String title); 
 
 	
 
