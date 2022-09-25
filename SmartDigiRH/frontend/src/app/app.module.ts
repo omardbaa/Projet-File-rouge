@@ -27,6 +27,8 @@ import { VacationDetailsComponent } from './vacation-details/vacation-details.co
 import { VacationListComponent } from './vacation-list/vacation-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HomeComponent } from './home/home.component';
+import { EmployeeSpaceComponent } from './employee-space/employee-space.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +52,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     UpdateVacationComponent,
     VacationDetailsComponent,
     VacationListComponent,
+    HomeComponent,
+    EmployeeSpaceComponent,
     
   ],
   imports: [

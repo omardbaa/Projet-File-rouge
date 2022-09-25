@@ -5,6 +5,7 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { CreateTrainingComponent } from './create-training/create-training.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateVacationComponent } from './create-vacation/create-vacation.component';
+import { HomeComponent } from './home/home.component';
 import { MeetingDetailsComponent } from './meeting-details/meeting-details.component';
 import { MeetingListComponent } from './meeting-list/meeting-list.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
@@ -24,7 +25,8 @@ import { VacationListComponent } from './vacation-list/vacation-list.component';
 
 const routes: Routes = [
 
-{path:'',redirectTo: 'users', pathMatch: 'full'},
+{path:'',redirectTo: 'home', pathMatch: 'full'},
+{path: 'home', component: HomeComponent},
 
 {path: 'users', component: UserListComponent},
 {path: 'create-user', component: CreateUserComponent},
@@ -50,6 +52,9 @@ const routes: Routes = [
 {path: 'create-training', component: CreateTrainingComponent},
 {path: 'update-training/:id', component: UpdateTrainingComponent},
 {path: 'training-details/:id', component: TrainingDetailsComponent},
+
+
+
 
 ];
 
