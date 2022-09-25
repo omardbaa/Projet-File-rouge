@@ -26,7 +26,7 @@ import smartDigiRH.services.impl.VacationServiceImpl;
 @RestController
 @EnableAutoConfiguration
 @RequestMapping(value = "/vacation")
-
+@CrossOrigin(origins = "http://localhost:4200")
 public class VacationController {
 
 
@@ -85,7 +85,7 @@ public ResponseEntity<Vacation> update(@PathVariable Long id, @RequestBody Vacat
 
 	
 	
-	@GetMapping("all/{id}")
+	@GetMapping("/{id}/employees")
 	public List<Employee> getAllEmployeeOfVacation(@PathVariable("id") Long vacationId) {
 
 		return this.employeeServiceImpl.getAllEmployeeOfVacation(vacationId);

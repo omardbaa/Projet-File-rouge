@@ -34,4 +34,12 @@ deleteTraining(trainingId: number):Observable<Object>{
   return this.httpClient.delete(`${this.baseURL}/${trainingId}`);
 
 }
+
+
+
+getAllEmployees(trainingId: number): Observable<Training>{
+  return this.httpClient.get<Training>(`${this.baseURL}/${trainingId}`+'/employees');
+}
+
+
 }

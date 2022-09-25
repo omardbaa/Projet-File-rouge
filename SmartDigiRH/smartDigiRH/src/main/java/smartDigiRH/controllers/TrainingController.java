@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import smartDigiRH.entities.Training;
 import smartDigiRH.services.impl.EmployeeServiceImpl;
 import smartDigiRH.services.impl.TrainingServiceImpl;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @EnableAutoConfiguration
 @RequestMapping(value = "/training")
@@ -83,7 +85,7 @@ public ResponseEntity<Training> update(@PathVariable Long id, @RequestBody Train
 	
 	
 	
-	@GetMapping("all/{id}")
+	@GetMapping("/{id}/employees")
 	public List<Employee> getAllEmployeeOfTraining(@PathVariable("id") Long trainingId) {
 
 		return this.employeeServiceImpl.getAllEmployeeOfTraining(trainingId);

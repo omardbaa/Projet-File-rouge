@@ -33,4 +33,10 @@ deleteVacation(vacationId: number):Observable<Object>{
   return this.httpClient.delete(`${this.baseURL}/${vacationId}`);
 
 }
+
+
+getAllEmployees(vacationId: number): Observable<Vacation>{
+  return this.httpClient.get<Vacation>(`${this.baseURL}/${vacationId}`+'/employees');
+}
+
 }

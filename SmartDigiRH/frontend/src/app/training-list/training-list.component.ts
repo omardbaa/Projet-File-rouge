@@ -15,9 +15,10 @@ perPage = 4;
 p: number = 1;
 title = '';
 trainingId = '';
+training_Id!:number;
 
 
-
+  allEmployees: any = [];
   trainings: Training[] = [];
 
   constructor(private trainingService : TrainingService, private router: Router) { }
@@ -25,6 +26,7 @@ trainingId = '';
   ngOnInit(): void {
 
     this.getTrainings();
+
   }
 
   private getTrainings(){
@@ -51,6 +53,9 @@ trainingId = '';
   getData(){
     /*this.httpclient.get<UserInterface>("http://localhost:8080/auth/users")*/
   }
+
+
+
 
 }
 

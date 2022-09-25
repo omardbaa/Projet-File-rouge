@@ -33,4 +33,10 @@ deleteMeeting(meetingId: number):Observable<Object>{
   return this.httpClient.delete(`${this.baseURL}/${meetingId}`);
 
 }
+
+
+getAllEmployees(meetingId: number): Observable<Meeting>{
+  return this.httpClient.get<Meeting>(`${this.baseURL}/${meetingId}`+'/employees');
+}
+
 }

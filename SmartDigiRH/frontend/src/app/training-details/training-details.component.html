@@ -1,1 +1,63 @@
-<p>training-details works!</p>
+
+<head>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    
+</head>
+
+
+
+
+
+
+
+
+
+
+<h6>Training Details</h6>
+
+<table class="table table-striped">
+    <thead class="table-footer bg-primary text-white" style="text-align: center" >
+    
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name </th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Post</th>
+       
+
+
+        </tr>
+    </thead>
+    <tbody style="text-align: center" >
+        <tr *ngFor = "let employee of  allEmployees">
+            <td>{{employee.userId}}</td>
+            <td>{{employee.firstName}}</td>
+            <td> {{employee.lastName}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.phone}}</td>
+            <td> {{employee.post}}</td>
+          
+       
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+   
+
+
+
+
+
+
+
+

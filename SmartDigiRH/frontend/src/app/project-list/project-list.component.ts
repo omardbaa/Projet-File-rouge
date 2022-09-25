@@ -36,8 +36,6 @@ userId!: number;
   ngOnInit(): void {
 
     this.getProjects();
-
-    this.getEmployees();
   }
 
   private getProjects(){
@@ -67,11 +65,7 @@ userId!: number;
 
 
   
-  private getEmployees(){
-    this.projectservice.getAllEmployees(this.projetId).subscribe(data =>{
-      this.allEmployees = data;
-    });
-  }
+
 
   // userDetails(userId:number){
   //   this.router.navigate(['user-details', userId]);
