@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Employee } from "../models/employee";
 import { Project } from "../models/project-interface/project";
 import { ProjectServiceService } from "../project-service/project-service.service";
+import { UserService } from "../user-service/user.service";
 
 @Component({
   selector: 'app-project-list',
@@ -16,15 +18,26 @@ export class ProjectListComponent implements OnInit {
   title = '';
   projectId = '';
 
-projects: Project [] = [];
+  allEmployees: any = [];
 
-  constructor(private projectservice: ProjectServiceService, private router:Router) { }
+projects: Project [] = [];
+projetId!:number;
+
+userId!: number;
+  user: Employee = new Employee;
+
+  constructor(private projectservice: ProjectServiceService, private router:Router, private userService: UserService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
     this.getProjects();
-  }
 
+    // this.userId = this.route.snapshot.params['id'];
+    // this.user = new Employee();
+    // this.userService.getUserById(this.userId).subscribe(data => {
+    //   this.user = data;
+  // });
+  }
   private getProjects(){
     this.projectservice.getProjectList().subscribe(data =>{
       this.projects = data;
@@ -43,12 +56,27 @@ projects: Project [] = [];
     this.projectservice.deleteProject(projectId).subscribe(data =>{
    console.log(data);
       this.getProjects();
+
+      this.getEmployees();
     })
   }
 
   getData(){
     /*this.httpclient.get<UserInterface>("http://localhost:8080/auth/users")*/
   }
+
+
+  
+  private getEmployees(){
+    this.projectservice.getAllEmployees(this.projetId).subscribe(data =>{
+      this.allEmployees = data;
+    });
+  }
+
+  // userDetails(userId:number){
+  //   this.router.navigate(['user-details', userId]);
+
+  // }
 
 }
 
