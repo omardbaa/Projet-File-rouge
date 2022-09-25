@@ -144,7 +144,7 @@ public class AccountController {
 
 
 	// Assing Project To Employee
-	@PostMapping(path = "/employees")
+	@PostMapping(path = "/addEmployee")
 	public Collection<Project> AssingProjectToEmployee(@RequestBody ProjectToEmployee projectEmployee) {
 
 		Employee employee = (Employee) service.findById(projectEmployee.getUserId());

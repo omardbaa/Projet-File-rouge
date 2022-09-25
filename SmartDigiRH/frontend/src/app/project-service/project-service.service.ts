@@ -39,13 +39,10 @@ deleteProject(projectId: number):Observable<Object>{
 
 
 
+
 getAllEmployees(projectId: number): Observable<Project>{
   return this.httpClient.get<Project>(`${this.baseURL}/${projectId}`+'/employees');
 }
-
-// addEmployeeToProject(projectEmployee: Project): Observable<Object>{
-//   return this.httpClient.post(`${this.baseURL}`, projectEmployee +'/employees');
-// }
 
 
 }
