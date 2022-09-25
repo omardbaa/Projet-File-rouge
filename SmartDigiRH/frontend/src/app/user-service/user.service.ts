@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { User } from '../models/user';
+import { Employee } from '../models/employee';
 @Injectable({providedIn: 'root'})
 export class UserService {
   
@@ -11,20 +11,20 @@ export class UserService {
   private baseURL = "http://localhost:8080/user/employee";
   constructor(private httpClient: HttpClient) { }
 
-getUsersList():Observable<User[]>{
+getUsersList():Observable<Employee[]>{
 
-  return this.httpClient.get<User[]>(`${this.baseURL}`);
+  return this.httpClient.get<Employee[]>(`${this.baseURL}`);
 }
 
-createUser(user:User): Observable<Object>{
+createUser(user:Employee): Observable<Object>{
   return this.httpClient.post(`${this.baseURL}`, user);
 }
 
-getUserById(userId: number): Observable<User>{
-  return this.httpClient.get<User>(`${this.baseURL}/${userId}`);
+getUserById(userId: number): Observable<Employee>{
+  return this.httpClient.get<Employee>(`${this.baseURL}/${userId}`);
 }
 
-updateUser(userId:number, user: User): Observable<Object>{
+updateUser(userId:number, user: Employee): Observable<Object>{
   return this.httpClient.put(`${this.baseURL}/${userId}`,user);
 }
 

@@ -5,7 +5,10 @@
 
 .dropdown:hover  .dropdown-menu{
     display: block;transition: all 0.5s ease-in-out;
-    
+
+    background-color: white;
+    color: dodgerblue;
+    cursor: pointer;
 }
 
 
@@ -22,3 +25,25 @@
 /* .logo{
     src: url("../assets/Images/");
 } */
+
+.nav-item:hover .dropdown{
+
+    background-color: white;
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+    
+white-space: nowrap;
+    background-color: white;
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

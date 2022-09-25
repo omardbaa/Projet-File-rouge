@@ -1,4 +1,6 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<body>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
@@ -16,12 +18,12 @@
         </li>
        
         <li  style="margin-left: 60px;"class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">
             Employee
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a routerLink="users"   class="dropdown-item" >Employee List</a></li>
-            <li><a routerLink="create-user"  class="dropdown-item">New Employee</a></li>
+            <li><a routerLink="users"   class="dropdown-item"  routerLinkActive="active">Employee List</a></li>
+            <li><a routerLink="create-user"  class="dropdown-item" routerLinkActive="active">New Employee</a></li>
             <!-- <li><hr class="dropdown-divider"></li> -->
           </ul>
         </li>
@@ -35,8 +37,8 @@
             Project
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a routerLink="projects"   class="dropdown-item" >Project List</a></li>
-            <li><a routerLink="create-project"  class="dropdown-item">New Project</a></li>
+            <li><a routerLink="projects"   class="dropdown-item" routerLinkActive="active">Project List</a></li>
+            <li><a routerLink="create-project"  class="dropdown-item" routerLinkActive="active">New Project</a></li>
             <!-- <li><hr class="dropdown-divider"></li> -->
           </ul>
         </li>
@@ -49,8 +51,8 @@
             Meeting
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a routerLink="meetings"   class="dropdown-item" >Meeting List</a></li>
-            <li><a routerLink="create-meeting"  class="dropdown-item">New Meeting</a></li>
+            <li><a routerLink="meetings"   class="dropdown-item" routerLinkActive="active">Meeting List</a></li>
+            <li><a routerLink="create-meeting"  class="dropdown-item" routerLinkActive="active">New Meeting</a></li>
             <!-- <li><hr class="dropdown-divider"></li> -->
           </ul>
         </li>
@@ -62,8 +64,8 @@
             Training
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a routerLink="trainings"   class="dropdown-item" >Training List</a></li>
-            <li><a routerLink="create-training"  class="dropdown-item">New Training</a></li>
+            <li><a routerLink="trainings"   class="dropdown-item" routerLinkActive="active">Training List</a></li>
+            <li><a routerLink="create-training"  class="dropdown-item" routerLinkActive="active">New Training</a></li>
             <!-- <li><hr class="dropdown-divider"></li> -->
           </ul>
         </li>
@@ -75,8 +77,8 @@
             Vacation
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a routerLink="vacations"   class="dropdown-item" >Vacation List</a></li>
-            <li><a routerLink="create-vacation"  class="dropdown-item">New Vacation</a></li>
+            <li><a routerLink="vacations"   class="dropdown-item" routerLinkActive="active">Vacation List</a></li>
+            <li><a routerLink="create-vacation"  class="dropdown-item" routerLinkActive="active">New Vacation</a></li>
             <!-- <li><hr class="dropdown-divider"></li> -->
           </ul>
         </li>
@@ -89,6 +91,7 @@
   </div>
 </nav>
 
+</body>
 
 <div class="container">
 <router-outlet></router-outlet>

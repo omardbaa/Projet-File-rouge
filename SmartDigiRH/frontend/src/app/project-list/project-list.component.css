@@ -2,7 +2,7 @@
 
 .form-control {
     display: block;
-    width: 25%;
+    width: 90%;
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -17,7 +17,7 @@
     border-radius: .375rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
    padding-right: 5rem;
-margin-left: 55%;
+margin: 5px;
    margin-bottom: 20px;
 }
 
@@ -30,4 +30,23 @@ border-color:transparent ;
     color: white;
   
     
+}
+
+
+body{
+    background:#f3f3f3;
+    margin-top:20px;
+    color: #616f80;
+}
+.card {
+    width: 100%;
+    border: none;
+    margin-bottom: 24px;
+    -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+    box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+}
+
+.avatar-xs {
+    height: 2.3rem;
+    width: 2.3rem;
 }

@@ -33,4 +33,32 @@ deleteProject(projectId: number):Observable<Object>{
   return this.httpClient.delete(`${this.baseURL}/${projectId}`);
 
 }
+
+
+//	Get All Projects
+//	@PostAuthorize("hasAuthority('ADMIN')")
+// @CrossOrigin(origins = "http://localhost:4200")
+// @GetMapping
+// public ResponseEntity<List<Project>> getAll() {
+//   List<Project> projects = service.getAll();
+//   return new ResponseEntity<>(projects, HttpStatus.OK);
+
+// }
+
+// // getAllEmployeeOfProject
+
+// @GetMapping("all/{id}")
+// public List<Employee> getAllEmployeeOfProject(@PathVariable("id") Long projectId) {
+
+//   return this.employeeServiceImpl.getAllEmployeeOfProject(projectId);
+
+
+
+
+
+getAllEmployees(projectId: number): Observable<Project>{
+  return this.httpClient.get<Project>(`${this.baseURL}/${projectId}`+'/employees');
+}
+
+
 }

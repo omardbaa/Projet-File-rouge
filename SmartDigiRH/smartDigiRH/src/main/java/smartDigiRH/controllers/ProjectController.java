@@ -77,7 +77,7 @@ public class ProjectController {
 
 	// getAllEmployeeOfProject
 
-	@GetMapping("all/{id}")
+	@GetMapping("/{id}/employees")
 	public List<Employee> getAllEmployeeOfProject(@PathVariable("id") Long projectId) {
 
 		return this.employeeServiceImpl.getAllEmployeeOfProject(projectId);

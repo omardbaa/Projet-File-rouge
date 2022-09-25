@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User} from '../models/user';
+import { Employee} from '../models/employee';
 import { UserService } from '../user-service/user.service';
 
 @Component({
@@ -15,7 +15,7 @@ perPage = 4;
 p: number = 1;
 username = '';
 userId = '';
-  users: User[] = [];
+  users: Employee[] = [];
 
   constructor(private userService : UserService, private router: Router) { }
 

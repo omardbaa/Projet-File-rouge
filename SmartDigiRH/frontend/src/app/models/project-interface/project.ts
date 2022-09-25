@@ -1,3 +1,4 @@
+import { Employee } from "../employee";
 
 export class Project {
 
@@ -7,6 +8,8 @@ description!:string;
 startDate!: Date;
 endDate!:string;
 status!: string;
+ employees!: Employee['userId'];
+ 
 
 
 
