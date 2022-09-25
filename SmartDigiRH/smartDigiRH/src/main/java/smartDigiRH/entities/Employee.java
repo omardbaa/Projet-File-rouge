@@ -14,6 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.AllArgsConstructor;
@@ -49,6 +50,8 @@ public class Employee extends User {
 	joinColumns = @JoinColumn(name ="userId"),
 	inverseJoinColumns = @JoinColumn(name ="projectId")
 	)
+	
+	@JsonIgnore
 	private Collection<Project> projects;
 	
 //	  public void save(Project projects) {

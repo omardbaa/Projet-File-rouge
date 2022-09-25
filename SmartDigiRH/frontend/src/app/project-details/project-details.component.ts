@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../models/employee';
 import { Project } from '../models/project-interface/project';
 import { ProjectServiceService } from '../project-service/project-service.service';
@@ -26,7 +26,7 @@ userId!:number;
 
 
 
-  constructor(private projectService: ProjectServiceService , private route: ActivatedRoute) { }
+  constructor(private projectService: ProjectServiceService , private route: ActivatedRoute, private router: Router) { }
 
   
 
@@ -50,5 +50,31 @@ userId!:number;
     });
   }
   
+
+  addEmployeeToProject(){
+
+    this.projectService.createProject(this.project).subscribe(data => {
+      console.log(data);
+      this.goToProjectList();
+
+  },
+  error => console.log(error));
+}
+
+  goToProjectList(){
+    this.router.navigate(['/projects']);
+
+  }
+  
+  
+
+
+  onSubmit(){
+    console.log(this.project);
+    this.addEmployeeToProject()
+    this.goToProjectList();
+
+  }
+
 
 }

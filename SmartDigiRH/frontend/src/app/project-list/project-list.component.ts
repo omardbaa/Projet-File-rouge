@@ -18,7 +18,12 @@ export class ProjectListComponent implements OnInit {
   title = '';
   projectId = '';
 
+
+
+
+  employee: Employee= new Employee;
   allEmployees: any = [];
+
 
 projects: Project [] = [];
 projetId!:number;
@@ -26,18 +31,15 @@ projetId!:number;
 userId!: number;
   user: Employee = new Employee;
 
-  constructor(private projectservice: ProjectServiceService, private router:Router, private userService: UserService, private route: ActivatedRoute) { }
+  constructor(private projectservice: ProjectServiceService, private router:Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
     this.getProjects();
 
-    // this.userId = this.route.snapshot.params['id'];
-    // this.user = new Employee();
-    // this.userService.getUserById(this.userId).subscribe(data => {
-    //   this.user = data;
-  // });
+    this.getEmployees();
   }
+
   private getProjects(){
     this.projectservice.getProjectList().subscribe(data =>{
       this.projects = data;
@@ -56,8 +58,6 @@ userId!: number;
     this.projectservice.deleteProject(projectId).subscribe(data =>{
    console.log(data);
       this.getProjects();
-
-      this.getEmployees();
     })
   }
 

@@ -35,23 +35,6 @@ deleteProject(projectId: number):Observable<Object>{
 }
 
 
-//	Get All Projects
-//	@PostAuthorize("hasAuthority('ADMIN')")
-// @CrossOrigin(origins = "http://localhost:4200")
-// @GetMapping
-// public ResponseEntity<List<Project>> getAll() {
-//   List<Project> projects = service.getAll();
-//   return new ResponseEntity<>(projects, HttpStatus.OK);
-
-// }
-
-// // getAllEmployeeOfProject
-
-// @GetMapping("all/{id}")
-// public List<Employee> getAllEmployeeOfProject(@PathVariable("id") Long projectId) {
-
-//   return this.employeeServiceImpl.getAllEmployeeOfProject(projectId);
-
 
 
 
@@ -59,6 +42,10 @@ deleteProject(projectId: number):Observable<Object>{
 getAllEmployees(projectId: number): Observable<Project>{
   return this.httpClient.get<Project>(`${this.baseURL}/${projectId}`+'/employees');
 }
+
+// addEmployeeToProject(projectEmployee: Project): Observable<Object>{
+//   return this.httpClient.post(`${this.baseURL}`, projectEmployee +'/employees');
+// }
 
 
 }
