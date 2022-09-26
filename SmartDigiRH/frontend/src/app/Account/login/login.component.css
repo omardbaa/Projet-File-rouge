@@ -1,0 +1,22 @@
+.login {
+    min-height: 100vh;
+
+   margin: 50px; border-radius: 13px; border-width: 2px; border-color: blue;
+  }
+  
+  .bg-image {
+    background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .login-heading {
+    font-weight: 300;
+  }
+  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+  

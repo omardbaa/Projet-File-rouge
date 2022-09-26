@@ -29,6 +29,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HomeComponent } from './home/home.component';
 import { EmployeeSpaceComponent } from './employee-space/employee-space.component';
+import { LoginComponent } from './Account/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +55,7 @@ import { EmployeeSpaceComponent } from './employee-space/employee-space.componen
     VacationListComponent,
     HomeComponent,
     EmployeeSpaceComponent,
+    LoginComponent,
     
   ],
   imports: [

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './Account/login/login.component';
 import { CreateMeetingComponent } from './create-meeting/create-meeting.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { CreateTrainingComponent } from './create-training/create-training.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
 
 {path:'',redirectTo: 'home', pathMatch: 'full'},
 {path: 'home', component: HomeComponent},
+{path: 'login', component: LoginComponent},
 
 {path: 'users', component: UserListComponent},
 {path: 'create-user', component: CreateUserComponent},
