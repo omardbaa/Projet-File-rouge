@@ -30,6 +30,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HomeComponent } from './home/home.component';
 import { EmployeeSpaceComponent } from './employee-space/employee-space.component';
 import { LoginComponent } from './Account/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { LoginComponent } from './Account/login/login.component';
     EmployeeSpaceComponent,
     LoginComponent,
     
+    
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,8 @@ import { LoginComponent } from './Account/login/login.component';
     HttpClientModule, 
     FormsModule, 
     NgxPaginationModule, 
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

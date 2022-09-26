@@ -1,6 +1,6 @@
 <section>
 
-<div class="container-fluid ps-md-0" style="margin: 50px;; border-radius: 13px; border-width: 2px; border-color: blue;">
+<div class="container-fluid ps-md-0" style="margin: 50px;; border-radius: 13px;">
     <div class="row g-0">
       <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
       <div class="col-md-8 col-lg-6">
@@ -9,15 +9,20 @@
             <div class="row">
               <div class="col-md-9 col-lg-8 mx-auto">
                 <h3 class="login-heading mb-4">Welcome back!</h3>
-  
+                  <div class="text-danger" *ngIf="errorMessage"> {{errorMessage}}</div>
                 <!-- Sign In Form -->
-                <form>
+
+                <!-- {{userFormGroup.value| json}} -->
+                <form  [formGroup]="userFormGroup" (ngSubmit)="handleLogin()">
+                 
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Email address</label>
+                    <input type="text" formControlName="username" class="form-control" id="floatingInput" placeholder="please incert your username">
+                    <label for="floatingInput">Username</label>
                   </div>
+                 
+                 
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="password"  formControlName="password" class="form-control" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Password</label>
                   </div>
   

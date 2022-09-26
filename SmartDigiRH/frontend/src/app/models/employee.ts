@@ -1,3 +1,5 @@
+import { AppRole } from "./AppRole";
+
 export class Employee {
     userId!: number;
     firstName!: string;
@@ -16,4 +18,7 @@ export class Employee {
     post!: string;
     contrat!: string;
     salary!: string;
+   idUser!: number;
+ 
+    roles!: String[];
 }

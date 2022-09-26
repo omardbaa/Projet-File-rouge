@@ -78,7 +78,11 @@ public EmployeeController(EmployeeServiceImpl service){
 		newEmployee.setPassword(employee.getPassword());
 		newEmployee.setPhone(employee.getPhone());
 		newEmployee.setType(employee.getType());
-		newEmployee.setPhoto(employee.getPhoto());
+		
+	    
+	    String[] result = employee.getPhoto().split("/");
+
+		newEmployee.setPhoto(result[result.length-1]); // upload
 		newEmployee.setAddress(employee.getAddress());
 		newEmployee.setBirthday(employee.getBirthday());
 		newEmployee.setCountry(employee.getCountry());

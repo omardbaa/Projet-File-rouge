@@ -7,8 +7,8 @@ title!: string;
 description!:string;
 startDate!: Date;
 endDate!:string;
-status!: string;
- employees!: Employee['userId'];
+status!: any;
+ employees!: Employee[];
  
 
 

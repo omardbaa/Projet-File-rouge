@@ -1,9 +1,12 @@
+
 package smartDigiRH.entities;
 
 import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +19,6 @@ import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -51,8 +53,8 @@ public class Project {
 	@DateTimeFormat (pattern = "yyyy-MM-dd")
 	private Date endDate;
 	
-	
-	private String status;
+	@Enumerated(EnumType.STRING)
+	private Status status;
 	
 	
 	@ManyToMany(mappedBy = "projects", targetEntity = Employee.class, fetch = FetchType.LAZY)

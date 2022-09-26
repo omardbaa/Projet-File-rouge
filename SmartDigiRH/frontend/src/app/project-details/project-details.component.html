@@ -20,7 +20,7 @@
     <h3> Project Details</h3>
         <div class="row">
             <div class="col-lg-12 mb-4 mb-sm-5" >
-                <div class="card card-style1 border-0">
+                <div class="card-first card-style1 border-0">
                     <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
                         <div class="row align-items-left">
                             <div class="col-lg-6 mb-3 mb-lg-0 rounded-imag">
@@ -87,36 +87,40 @@
 <section>
 
     <h3 style="margin: 10px;"> Team</h3>
+    <div class="row" >
     
-    <div class="container2" *ngFor = "let employee of  allEmployees" >
-    
-        
-        <div class="row " style="align-content: right;">
-           
-            <div class="col-12 col-md-4 col-lg-4"    >
-                <div class="card border-0 shadow-lg pt-5 my-5 position-center">
-                    <div class="card-body p-4">
-                        <div class="member-profile position-absolute w-100 text-center">
-                            <img   class="rounded-circle " src="https://pickaface.net/gallery/avatar/ceb123a52820908b1886.png" alt="">
+        <div class="col-xl-3 col-sm-6" *ngFor = "let user of allEmployees" >
+            <div  class="card" >
+                <div  class="card-body">
+                
+                    <div class="d-flex align-items-center">
+                        <div><img [src]="user.photo" alt="" class="avatar-md rounded-circle img-thumbnail" /></div>
+                        <div class="flex-1 ms-3">
+                            <h6 class="font-size-16 mb-1">{{user.firstName}} {{user.lastName}} </h6>
+                            <h6 class="font-size-16 mb-1"><label style="margin-right:10px ;">Id:</label>{{user.userId}}  </h6>
+                            <span class="badge badge-soft-success mb-0">{{user.post}}</span>
                         </div>
-                        <div class="card-text pt-1">
-                            <h5 class="member-name mb-0 text-center text-person  font-weight-bold">{{employee.firstName}} {{employee.lastName}}</h5>
-                            <div class="mb-3 text-center text-success" >{{employee.post}}</div>
-                            
+                    </div>
+                    <div class="mt-3 pt-1">
+                        <p class="text-muted mb-0"><i class="mdi mdi-phone font-size-15 align-middle pe-2 text-primary"></i> {{user.phone}}</p>
+                        <p class="text-muted mb-0 mt-2"><i class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i> {{user.email}}</p>
+                      
+                    </div>
+                    <div class="d-flex gap-2 pt-4">
 
-                            <div class="mb-3 text-left"> <label style="margin-left:10px ;margin-right: 5px;">Email:</label> {{employee.email}}</div>
+                       
 
-                            <div class="mb-3 text-left"><label style="margin-left:10px ;margin-right: 10px;">Phone:</label>{{employee.phone}}</div>
-                            <div class="mb-3 text-left"><label style="margin-left:10px ;margin-right: 10px;">Id:</label>{{employee.userId}}</div>
-                        </div>
-                    </div><!--//card-body-->
-                    
-                </div><!--//card-->
-            </div><!--//col-->
-         </div><!--//row-->
+                       
+                        
+                        <!-- <button type="button" class="btn btn-primary btn-sm w-50"><i class="bx bx-message-square-dots me-1"></i> Contact</button> -->
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
         
-    </div>
-    
+</div>
     
     </section>
 

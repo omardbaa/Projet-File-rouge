@@ -29,10 +29,14 @@
         </div>
     
     
+        
         <div class="form-group"> 
             <label>Status  </label>
-            <input type="text"  class="form-control" id ="status"
-                [(ngModel)] = "project.status" name = "status" placeholder="On progress">
+          <select [(ngModel)] = "project.status" class="form-control" id ="status"  name = "status" type="select" matNativeControl required>
+            <option   value="COMPLETED">Completed</option>
+            <option value="ONPROGRESS">On progress</option>
+            <option value="PENDING">Pending</option>
+          </select>
         </div>
     
         <br> 

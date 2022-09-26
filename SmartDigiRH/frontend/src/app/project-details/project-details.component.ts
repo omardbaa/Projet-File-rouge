@@ -46,7 +46,15 @@ userId!:number;
 
   private getEmployees(){
     this.projectService.getAllEmployees(this.projectId).subscribe(data =>{
-      this.allEmployees = data;
+   let users= [];
+   let datalist:any = data;
+      for (let a of datalist) {
+        if (a.userId) {
+          users.push(a)
+
+        }
+      }
+      this.allEmployees = users;
     });
   }
   

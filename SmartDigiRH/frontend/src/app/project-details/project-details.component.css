@@ -6,10 +6,11 @@ body{margin-top:20px;}
     border: 0!important;
 }
 .avatar{
+    
     width: 250px;
     height: 250px;
 }
-.card {
+.card-first {
     width: 100%;
     margin-top: 10px;
     margin-right: 10px;
@@ -134,124 +135,34 @@ section {
 
 
 
-body{margin-top:20px;}
-.py-5 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-}
-.pt-5 {
-    padding-top: 3rem !important;
-}
-.my-5 {
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
-}
-.border-0 {
-    border: 0 !important;
-}
-.position-relative {
-    position: relative !important;
-}
-.shadow-lg {
-    box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%) !important;
-}
-.card {
-    position: relative;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
+
+.form-control {
+    display: block;
+    width: 25%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+   
     background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,0.125);
-    border-radius: .25rem;
-}
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   padding-right: 5rem;
 
-.member-profile {
-    top: -50px;
-    left: 0;
-}
-.text-center {
-    text-align: center !important;
-}
-.w-100 {
-    width: 100% !important;
-}
-.position-absolute {
-    position: absolute !important;
-}
-
-.member-profile img {
-    width: 100px;
-    height: 100px;
-}
-.rounded-circle {
-    border-radius: 100% !important;
-}
-
-
-.rounded-imag {
-    border-radius: 100% !important;
-}
-.mx-auto {
-    margin-right: auto !important;
-    margin-left: auto !important;
-}
-.shadow-sm {
-    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
-}
-
-.avatar[_ngcontent-pla-c58] {
-    width: 500px;
-    height: 350px;
-}
-
-.col-lg-6[_ngcontent-fxy-c58] {
-    padding-left: 10px;
+   margin-left: 64%;
+   margin-bottom: 20px;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-body{
-    background:#f3f3f3;
-    margin-top:20px;
-    color: #616f80;
-}
-.card {
-    border: none;
-    margin-bottom: 24px;
-    -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
-    box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
-}
-
-.avatar-xs {
-    height: 2.3rem;
-    width: 2.3rem;
+.container2{
+    height: 400px;
+    width: 100%;
+    margin-bottom: 110px;
 }
