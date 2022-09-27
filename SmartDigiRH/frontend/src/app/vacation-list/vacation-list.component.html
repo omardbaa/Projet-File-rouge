@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
 
 
-<div style="margin-top: 100px;">
+<div style="margin-top: 100px; margin-left: 120px;  margin-right: 120px;">
 
 <div class="d-flex" style="margin-top: 50px; margin-left: 20px;">
     <h4 >Vacation List</h4>
@@ -13,7 +13,7 @@
 
   
 
-<table class="table table-striped">
+<table class="table table-striped" >
     <thead class="table-footer bg-primary text-white"  >
         
         <tr>
@@ -27,8 +27,8 @@
 
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor = "let vacation of vacations | filter : type | filter : vacationId | paginate: { itemsPerPage: perPage, currentPage: p }">
+    <tbody *ngFor = "let vacation of vacations | filter : type | filter : vacationId | paginate: { itemsPerPage: perPage, currentPage: p }">
+        <tr >
             <td>{{vacation.vacationId}}</td>
             <td> {{vacation.type}}</td>
             <td> {{vacation.period}}</td>
@@ -46,7 +46,7 @@
     </tbody>
 </table>
 
-
+  <pagination-controls  class="myPagination" (pageChange)="p = $event"></pagination-controls>
 </div>
    
-    <pagination-controls class="myPagination" (pageChange)="p = $event"></pagination-controls>
+  
