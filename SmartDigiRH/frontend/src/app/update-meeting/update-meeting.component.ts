@@ -35,7 +35,7 @@ export class UpdateMeetingComponent implements OnInit {
     }
 
     goToMeetingList(){
-      this.router.navigate(['/meetings']);
+      this.router.navigate(['admin/meetings']);
   
     }
   }

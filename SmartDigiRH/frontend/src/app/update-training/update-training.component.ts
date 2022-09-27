@@ -35,7 +35,7 @@ export class UpdateTrainingComponent implements OnInit {
     }
 
     goToTrainingList(){
-      this.router.navigate(['/trainings']);
+      this.router.navigate(['admin/trainings']);
   
     }
   }

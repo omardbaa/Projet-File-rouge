@@ -2,7 +2,7 @@
 
 .form-control {
     display: block;
-    width: 25%;
+    width: 18%;
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -18,7 +18,7 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
    padding-right: 5rem;
 
-   margin-left: 64%;
+   margin-left: 60%;
    margin-bottom: 20px;
 }
 
@@ -39,3 +39,5 @@ border-color:transparent ;
     width: 100%;
     margin-bottom: 110px;
 }
+
+

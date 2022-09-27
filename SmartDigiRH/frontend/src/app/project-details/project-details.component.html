@@ -11,7 +11,7 @@
 
 </head>
 
-<body>
+<body style="margin-top: 100px;">
 <div>
 <section class="bg-light">
 
@@ -84,17 +84,17 @@
 
 
 
-<section>
-
-    <h3 style="margin: 10px;"> Team</h3>
-    <div class="row" >
+<section >
+<h3 style="margin-left: 120px; margin-bottom: 30px;"> Team</h3>
+    
+    <div class="row" style="margin-left: 120px;">
     
         <div class="col-xl-3 col-sm-6" *ngFor = "let user of allEmployees" >
             <div  class="card" >
                 <div  class="card-body">
                 
                     <div class="d-flex align-items-center">
-                        <div><img [src]="user.photo" alt="" class="avatar-md rounded-circle img-thumbnail" /></div>
+                        <div><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="avatar-md rounded-circle img-thumbnail" /></div>
                         <div class="flex-1 ms-3">
                             <h6 class="font-size-16 mb-1">{{user.firstName}} {{user.lastName}} </h6>
                             <h6 class="font-size-16 mb-1"><label style="margin-right:10px ;">Id:</label>{{user.userId}}  </h6>

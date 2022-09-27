@@ -33,7 +33,7 @@ export class UpdateProjectComponent implements OnInit {
     }
 
     goToProjectList(){
-      this.router.navigate(['/projects']);
+      this.router.navigate(['admin/projects']);
   
     }
   }

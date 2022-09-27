@@ -45,12 +45,12 @@ userId!: number;
   }
 
   projectDetails(projectId:number){
-    this.router.navigate(['project-details', projectId]);
+    this.router.navigate(['admin/project-details', projectId]);
 
   }
 
   updateProject(projectId: number){
-    this.router.navigate(['update-project', projectId]);
+    this.router.navigate(['admin/update-project', projectId]);
   }
   deleteProject (projectId: number){
     this.projectservice.deleteProject(projectId).subscribe(data =>{

@@ -1,6 +1,33 @@
-.bg-image {
-    background-image: url('https://images.unsplash.com/photo-1542744173-05336fcc7ad4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1102&q=80');
-    background-size: cover;
-    background-position: center;
-  }
+.bg{
+
+    flex-wrap: wrap;
+    color: cornflowerblue;
+
+    margin: 30px;
+}
   
+
+.position{
+    margin-right: 50px;
+flex-wrap: wrap;
+
+margin-top: 6%;
+text-align:justify;
+font-size: 50px;
+font-style: italic;
+font-family: sans-serif;
+color: cornflowerblue;
+
+
+}
+
+.body{
+
+
+
+    margin-bottom: 50px; 
+    border-color:darkgrey;
+    box-shadow: 6px 3px; 
+    border-radius: 20%; 
+    border:2px
+}

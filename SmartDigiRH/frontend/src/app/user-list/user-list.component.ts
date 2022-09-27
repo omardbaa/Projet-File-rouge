@@ -31,12 +31,12 @@ userId = '';
   }
 
   userDetails(userId:number){
-    this.router.navigate(['user-details', userId]);
+    this.router.navigate(['admin/user-details', userId]);
 
   }
 
   updateUser(userId: number){
-    this.router.navigate(['update-user', userId]);
+    this.router.navigate(['admin/update-user', userId]);
   }
   deleteUser (userId: number){
     this.userService.deleteUser(userId).subscribe(data =>{

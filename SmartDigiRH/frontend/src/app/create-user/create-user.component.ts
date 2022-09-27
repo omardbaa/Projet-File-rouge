@@ -26,7 +26,7 @@ this.userService.createUser(this.user).subscribe(data => {
 }
 
   goToUserList(){
-    this.router.navigate(['/users']);
+    this.router.navigate(['admin/users']);
 
   }
 

@@ -31,6 +31,7 @@ import { HomeComponent } from './home/home.component';
 import { EmployeeSpaceComponent } from './employee-space/employee-space.component';
 import { LoginComponent } from './Account/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminTemplateComponent } from './admin-template/admin-template.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     EmployeeSpaceComponent,
     LoginComponent,
+    AdminTemplateComponent,
     
     
   ],

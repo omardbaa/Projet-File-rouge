@@ -32,12 +32,12 @@ vacationId = '';
     }
   
     vacationDetails(vacationId:number){
-      this.router.navigate(['vacation-details', vacationId]);
+      this.router.navigate(['/admin/vacation-details', vacationId]);
   
     }
   
     updateVacation(vacationId: number){
-      this.router.navigate(['update-vacation', vacationId]);
+      this.router.navigate(['/admin/update-vacation', vacationId]);
     }
     deleteVacation (vacationId: number){
       this.vacationService.deleteVacation(vacationId).subscribe(data =>{

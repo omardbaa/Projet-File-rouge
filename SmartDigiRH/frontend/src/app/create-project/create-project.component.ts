@@ -27,7 +27,7 @@ this.projectService.createProject(this.project).subscribe(data => {
 }
 
 goToProjectList(){
-    this.router.navigate(['/projects']);
+    this.router.navigate(['admin/projects']);
 
   }
 

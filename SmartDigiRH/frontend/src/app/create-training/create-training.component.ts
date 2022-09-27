@@ -28,7 +28,7 @@ this.trainingService.createTraining(this.training).subscribe(data => {
 }
 
 goToTrainingList(){
-    this.router.navigate(['/trainings']);
+    this.router.navigate(['/admin/trainings']);
 
   }
 

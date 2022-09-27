@@ -34,7 +34,7 @@ export class UpdateVacationComponent implements OnInit {
     }
 
     goToVacationList(){
-      this.router.navigate(['/vacations']);
+      this.router.navigate(['admin/vacations']);
   
     }
   }

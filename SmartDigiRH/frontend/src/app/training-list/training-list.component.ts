@@ -36,12 +36,12 @@ training_Id!:number;
   }
 
  trainingDetails(trainingId:number){
-    this.router.navigate(['training-details', trainingId]);
+    this.router.navigate(['admin/training-details', trainingId]);
 
   }
 
   updateTraining(trainingId: number){
-    this.router.navigate(['update-training', trainingId]);
+    this.router.navigate(['admin/update-training', trainingId]);
   }
   deleteTraining (trainingId: number){
     this.trainingService.deleteTraining(trainingId).subscribe(data =>{

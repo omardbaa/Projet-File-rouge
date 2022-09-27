@@ -1,0 +1,57 @@
+/*@import "../node_modules/bootstrap/scss/bootstrap";*/
+
+
+
+.dropdown:hover  .dropdown-menu{
+    display: block;transition: all 0.5s ease-in-out;
+
+    background-color: white;
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+
+.dropdown-toggle::after {
+    display:none;
+
+}
+
+
+.navbar-brand{
+    margin-left: 120px;
+}
+
+/* .logo{
+    src: url("../assets/Images/");
+} */
+
+.nav-item:hover .dropdown{
+
+    background-color: white;
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+    
+white-space: nowrap;
+    background-color: white;
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+
+.footer{
+    position: fixxed;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+
+    position: fixed;
+    width: 100%;
+    top: 0px !important;
+    z-index: 9999;
+   
+}

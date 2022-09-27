@@ -33,12 +33,12 @@ export class MeetingListComponent implements OnInit {
   }
 
   meetingDetails(meetingId:number){
-    this.router.navigate(['meeting-details', meetingId]);
+    this.router.navigate(['admin/meeting-details', meetingId]);
 
   }
 
   updateMeeting(meetingId: number){
-    this.router.navigate(['update-meeting', meetingId]);
+    this.router.navigate(['admin/update-meeting', meetingId]);
   }
   deleteMeeting (meetingId: number){
     this.meetingService.deleteMeeting(meetingId).subscribe(data =>{

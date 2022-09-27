@@ -27,7 +27,7 @@ this.vacationService.createVacation(this.vacation).subscribe(data => {
 }
 
 goToVacationList(){
-    this.router.navigate(['/vacations']);
+    this.router.navigate(['admin/vacations']);
 
   }
 

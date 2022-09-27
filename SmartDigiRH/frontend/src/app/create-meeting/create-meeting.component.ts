@@ -26,7 +26,7 @@ this.meetingService.createMeeting(this.meeting).subscribe(data => {
 }
 
 goToMeetingList(){
-    this.router.navigate(['/meetings']);
+    this.router.navigate(['admin/meetings']);
 
   }
 

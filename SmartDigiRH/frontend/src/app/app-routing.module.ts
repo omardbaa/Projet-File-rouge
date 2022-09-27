@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Account/login/login.component';
+import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { CreateMeetingComponent } from './create-meeting/create-meeting.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { CreateTrainingComponent } from './create-training/create-training.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateVacationComponent } from './create-vacation/create-vacation.component';
+import { AuthenticationGuard } from './guards/authentication.guard';
 import { HomeComponent } from './home/home.component';
 import { MeetingDetailsComponent } from './meeting-details/meeting-details.component';
 import { MeetingListComponent } from './meeting-list/meeting-list.component';
@@ -26,9 +28,15 @@ import { VacationListComponent } from './vacation-list/vacation-list.component';
 
 const routes: Routes = [
 
+
+
 {path:'',redirectTo: 'home', pathMatch: 'full'},
+{path: 'admin', component: AdminTemplateComponent, canActivate:[AuthenticationGuard],
+children:[ 
+  {path: 'login', component: LoginComponent},
+
 {path: 'home', component: HomeComponent},
-{path: 'login', component: LoginComponent},
+
 
 {path: 'users', component: UserListComponent},
 {path: 'create-user', component: CreateUserComponent},
@@ -54,6 +62,10 @@ const routes: Routes = [
 {path: 'create-training', component: CreateTrainingComponent},
 {path: 'update-training/:id', component: UpdateTrainingComponent},
 {path: 'training-details/:id', component: TrainingDetailsComponent},
+
+
+]},
+
 
 
 

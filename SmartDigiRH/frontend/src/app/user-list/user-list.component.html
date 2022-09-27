@@ -42,9 +42,9 @@
 
 
 
- <div class="container2">
+ <div class="container2" style="margin-top: 100px;">
     
-    <div class="d-flex" style="margin-top: 50px; margin-left: 20px;">
+    <div class="d-flex" style="margin-top: 50px; margin-left: 120px;">
         <h4 >Employee List</h4>
         <input [(ngModel)]="username" [(ngModel)]="userId" class="form-control me-6" type="search"   placeholder="Search" aria-label="Search" >
         
@@ -59,7 +59,7 @@
                     <div class="card-body">
                     
                         <div class="d-flex align-items-center">
-                            <div><img [src]="user.photo" alt="" class="avatar-md rounded-circle img-thumbnail" />{{user.photo}}</div>
+                            <div><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="avatar-md rounded-circle img-thumbnail" /></div>
                             <div class="flex-1 ms-3">
                                 <h6 class="font-size-16 mb-1">{{user.firstName}} {{user.lastName}} </h6>
                                 <h6 class="font-size-16 mb-1"><label style="margin-right:10px ;">Id:</label>{{user.userId}}  </h6>
